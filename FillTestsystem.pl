@@ -247,6 +247,8 @@ for my $Service ( @{ $Config->{Services} } ) {
 
     my $ServiceID = $CommonObject{ServiceObject}->ServiceAdd(
         %{$Service},
+        TypeID      => 11,
+        Criticality => '3 normal',
         ValidID => 1,
         UserID  => 1,
     );
@@ -293,6 +295,7 @@ for my $SLA ( @{ $Config->{SLAs} } ) {
 
     my $SLAID = $CommonObject{SLAObject}->SLAAdd(
         %{$SLA},
+        TypeID      => 11,
         ServiceIDs => \@ServiceIDs,
         ValidID    => 1,
         UserID     => 1,
