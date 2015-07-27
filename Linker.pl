@@ -74,11 +74,6 @@ if ( $Opts{'l'} eq 'FAQ' ) {
     );
 }
 
-if ( $Opts{'b'} eq 'FAQ' ) {
-    @ITSMModules = (
-        'OTRSBusiness',
-    );
-}
 
 
 
