@@ -86,6 +86,13 @@ my $Config = {
             UserEmail     => 'zilibasic@s7designcreative.com',
         },
         {
+            UserFirstname => 'Sanjin',
+            UserLastname  => 'Vik',
+            UserLogin     => 'svik',
+            UserPw        => 'svik',
+            UserEmail     => 'svik@s7designcreative.com',
+        },
+        {
             UserFirstname => 'agent-1',
             UserLastname  => 'agent-1',
             UserLogin     => 'agent-1',
@@ -99,15 +106,20 @@ my $Config = {
         {
             UserFirstname  => 'Pera',
             UserLastname   => 'Peric',
-            UserCustomerID => 'peraID',
             UserLogin      => 'pera',
             UserPassword   => 'pera',
             UserEmail      => 'zilibasic@s7designcreative.com',
         },
         {
+            UserFirstname  => 'Steva',
+            UserLastname   => 'Stevic',
+            UserLogin      => 'steva',
+            UserPassword   => 'steva',
+            UserEmail      => 'svik@s7designcreative.com',
+        },
+        {
             UserFirstname  => 'customer-1',
             UserLastname   => 'customer-1',
-            UserCustomerID => 'customer-1',
             UserLogin      => 'customer-1',
             UserPassword   => 'customer-1',
             UserEmail      => 'vmajkic@s7designcreative.com',
@@ -174,6 +186,19 @@ for my $Agent ( @{ $Config->{Agents} } ) {
     }
 }
 
+my $CustomerCompanyID = $Kernel::OM->Get('Kernel::System::CustomerCompany')->CustomerCompanyAdd(
+    CustomerID              => 'example.com',
+    CustomerCompanyName     => 'New Customer Inc.',
+    CustomerCompanyStreet   => '5201 Blue Lagoon Drive',
+    CustomerCompanyZIP      => '33126',
+    CustomerCompanyCity     => 'Miami',
+    CustomerCompanyCountry  => 'USA',
+    CustomerCompanyURL      => 'http://www.example.org',
+    CustomerCompanyComment  => 'some comment',
+    ValidID                 => 1,
+    UserID                  => 123,
+);
+
 # Add Customers
 CUSTOMER:
 for my $Customer ( @{ $Config->{Customers} } ) {
@@ -192,6 +217,7 @@ for my $Customer ( @{ $Config->{Customers} } ) {
 
     my $UserID = $CommonObject{CustomerUserObject}->CustomerUserAdd(
         %{$Customer},
+        UserCustomerID => $CustomerCompanyID,
         Source  => 'CustomerUser',
         ValidID => 1,
         UserID  => 1,
