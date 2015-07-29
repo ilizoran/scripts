@@ -74,6 +74,12 @@ if ( $Opts{'l'} eq 'FAQ' ) {
     );
 }
 
+if ( $Opts{'l'} eq 'Survey' ) {
+    @ITSMModules = (
+        'Survey',
+    );
+}
+
 
 
 
