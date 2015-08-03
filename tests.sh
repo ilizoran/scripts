@@ -1,11 +1,31 @@
 
- perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQExplorer
+  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyEditQuestions
  read -p "Press [Enter] key to continue..."
-   perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQZoom
+   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyStats
  read -p "Press [Enter] key to continue..."
-   perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQPrint
+   perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Output/SurveyMenu/Generic
  read -p "Press [Enter] key to continue..."
-   perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQSearch
+   perl bin/otrs.Console.pl Dev::UnitTest::Run --test SurveyOverview/Small
+ read -p "Press [Enter] key to continue..."
+   perl bin/otrs.Console.pl Dev::UnitTest::Run --test PublicSurvey
+
+
+
+ #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyAdd
+ # read -p "Press [Enter] key to continue..."
+ #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyEdit
+ # read -p "Press [Enter] key to continue..."
+ #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyOverview
+ # read -p "Press [Enter] key to continue..."
+ #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyZoom
+
+ # perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQExplorer
+ # read -p "Press [Enter] key to continue..."
+ #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQZoom
+ # read -p "Press [Enter] key to continue..."
+ #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQPrint
+ # read -p "Press [Enter] key to continue..."
+ #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQSearch
 
 
  #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test PublicFAQExplorer
