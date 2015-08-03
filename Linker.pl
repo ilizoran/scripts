@@ -80,6 +80,13 @@ if ( $Opts{'l'} eq 'Survey' ) {
     );
 }
 
+if ( $Opts{'l'} eq 'TimeAccounting' ) {
+    @ITSMModules = (
+        'TimeAccounting',
+    );
+}
+
+
 
 
 
