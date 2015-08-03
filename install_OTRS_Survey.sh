@@ -73,7 +73,7 @@ echo -e "\\n${green}***********Finished OTS***********"
 
 echo -e "\\n${yellow}======================================================================="
 
-perl ../scripts/Linker.pl -a install -m /opt -o /opt/otrs -l ITSM -d
+perl ../scripts/Linker.pl -a install -m /opt -o /opt/otrs -l Survey -d
 
 
 echo -e "\\n${green}***********Finished Survey***********"
