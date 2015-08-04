@@ -133,12 +133,6 @@ my $ConfigInjectStr = <<"EOD";
     \$Self->{'CheckEmailAddresses'} = 0;
     \$Self->{'CheckMXRecord'}       = 0;
 
-    # Fred
-    \$Self->{'Fred::BackgroundColor'} = '#006ea5';
-    \$Self->{'Fred::SystemName'}      = '$SystemName';
-    \$Self->{'Fred::ConsoleOpacity'}  = '0.6';
-    \$Self->{'Fred::ConsoleWidth'}    = '25%';
-
     # Misc
     \$Self->{'Loader::Enabled::CSS'}  = 0;
     \$Self->{'Loader::Enabled::JS'}   = 0;
@@ -222,12 +216,12 @@ system("rm $InstallDir/bin/InstallTestsystemDatabase.pl");
 system("sudo chown -R $Config{PermissionsOTRSUser} $InstallDir");
 
 # link Fred
-print STDERR "--- Linking Fred...\n";
-print STDERR "############################################\n";
-system(
-    "$Config{ModuleToolsRoot}/module-linker.pl install $FredDir $InstallDir"
-);
-print STDERR "############################################\n";
+# print STDERR "--- Linking Fred...\n";
+# print STDERR "############################################\n";
+# system(
+#     "$Config{ModuleToolsRoot}/module-linker.pl install $FredDir $InstallDir"
+# );
+# print STDERR "############################################\n";
 
 # # Deleting Cache
 # print STDERR "--- Deleting cache config...\n";

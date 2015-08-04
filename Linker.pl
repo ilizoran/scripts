@@ -74,6 +74,12 @@ if ( $Opts{'l'} eq 'FAQ' ) {
     );
 }
 
+if ( $Opts{'l'} eq 'TimeAccounting' ) {
+    @ITSMModules = (
+        'TimeAccounting',
+    );
+}
+
 
 
 # reverse the list of packages for uninstall
