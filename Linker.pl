@@ -87,7 +87,11 @@ if ( $Opts{'l'} eq 'TimeAccounting' ) {
 }
 
 
-
+if ( $Opts{'l'} eq 'OTRSMasterSlave' ) {
+    @ITSMModules = (
+        'OTRSMasterSlave',
+    );
+}
 
 
 # reverse the list of packages for uninstall
