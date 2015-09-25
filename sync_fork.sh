@@ -1,4 +1,4 @@
 #!/bin/bash
 git fetch upstream
-git checkout master
-git merge upstream/master
+git checkout rel-5_0
+git merge upstream/rel-5_0
