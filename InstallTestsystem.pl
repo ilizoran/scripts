@@ -41,7 +41,7 @@ use Getopt::Std;
 
 # get options
 my %Opts = ();
-getopt( 'pf', \%Opts );
+getopt( 'p', \%Opts );
 
 my $InstallDir = $Opts{p};
 if ( !$InstallDir || !-e $InstallDir ) {
@@ -49,11 +49,11 @@ if ( !$InstallDir || !-e $InstallDir ) {
     exit 2;
 }
 
-my $FredDir = $Opts{f};
-if ( !$FredDir || !-e $FredDir ) {
-    Usage("ERROR: -f must be a valid Fred-Directory!");
-    exit 2;
-}
+# my $FredDir = $Opts{f};
+# if ( !$FredDir || !-e $FredDir ) {
+#     Usage("ERROR: -f must be a valid Fred-Directory!");
+#     exit 2;
+# }
 
 # remove possible slash at the end
 $InstallDir =~ s{ / \z }{}xms;

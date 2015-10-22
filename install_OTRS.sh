@@ -28,7 +28,7 @@ echo -e "\\n${yellow}===========================================================
 echo -e "\\n${yellow}======================================================================="
 # copy the InstallTestsystem.pl script in otrs/Custom folder, execute it, and delete it
 cp /opt/scripts/InstallTestsystem.pl /opt/otrs/Custom/
-sudo perl Custom/InstallTestsystem.pl -p /opt/otrs -f /opt/Fred/
+sudo perl Custom/InstallTestsystem.pl -p /opt/otrs
 rm /opt/otrs/Custom/InstallTestsystem.pl
 echo -e "\\n${yellow}======================================================================="
 
