@@ -5,6 +5,8 @@ reset=`tput sgr0`
 
 /opt/scripts/DropTableOTRS.sh
 
+sudo perl ../module-tools/module-linker.pl uninstall /opt/Fred /opt/otrs
+
 # delete ZZZ* files in tmp
 echo -e "\\n"
 echo "${yellow}Delete ZZZ* files:"
