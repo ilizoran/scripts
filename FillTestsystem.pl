@@ -186,9 +186,12 @@ for my $Agent ( @{ $Config->{Agents} } ) {
     }
 }
 
+my $TestCustomerID    = "FirstCID";
+my $TestCompanyName   = "First Company";
+
 my $CustomerCompanyID = $Kernel::OM->Get('Kernel::System::CustomerCompany')->CustomerCompanyAdd(
-    CustomerID              => 'example.com',
-    CustomerCompanyName     => 'New Customer Inc.',
+    CustomerID              => $TestCustomerID,
+    CustomerCompanyName     => $TestCompanyName,
     CustomerCompanyStreet   => '5201 Blue Lagoon Drive',
     CustomerCompanyZIP      => '33126',
     CustomerCompanyCity     => 'Miami',
