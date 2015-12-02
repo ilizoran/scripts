@@ -47,6 +47,8 @@ Examples:
     Linker.pl -a install -v 4.0 -t /devel/other/module-tools -m /devel -o /devel/otrs -d
     Linker.pl -a install -m /devel -o /devel/otrs40-itsm -d
 
+    Linker.pl -a install -t /opt/module-tools -m /opt -o /opt/otrs -l FAQ -d
+
 EOF
 
     exit 1;
