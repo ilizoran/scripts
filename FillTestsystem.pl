@@ -124,6 +124,20 @@ my $Config = {
             UserPassword   => 'customer-1',
             UserEmail      => 'vmajkic@s7designcreative.com',
         },
+        {
+            UserFirstname  => 'Ana',
+            UserLastname   => 'Anic',
+            UserLogin      => 'ana',
+            UserPassword   => 'ana',
+            UserEmail      => 'anne.mustermann@s7designcreative.com',
+        },
+        {
+            UserFirstname  => 'Susanne',
+            UserLastname   => 'Susic',
+            UserLogin      => 'susanne',
+            UserPassword   => 'susanne',
+            UserEmail      => 'susanne.mustermann@s7designcreative.com',
+        },
     ],
 
     # Service data
