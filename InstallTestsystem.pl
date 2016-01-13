@@ -143,7 +143,7 @@ my $ConfigInjectStr = <<"EOD";
     \$Self->{'Loader::Enabled::CSS'}  = 0;
     \$Self->{'Loader::Enabled::JS'}   = 0;
 
-    \$Self->{'Ticket::Service'} =  1;
+    #\$Self->{'Ticket::Service'} =  1;
 
     # Send mail
     \$Self->{'SendmailModule::AuthPassword'} =  'neznam';
