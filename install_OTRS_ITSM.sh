@@ -76,17 +76,17 @@ echo -e "\\n${yellow}===========================================================
 perl ../scripts/Linker.pl -a install -m /opt -o /opt/otrs -l ITSM -d
 
 
-echo -e "\\n${green}***********Finished FAQ***********"
+echo -e "\\n${green}***********Finished ITSM***********"
 
 echo -e "\\n${yellow}======================================================================="
 # copy the FillTestsystem.pl script in otrs/Custom folder, execute it, and delete it
-cp /opt/scripts/FillTestsystem.pl /opt/otrs/Custom/
+cp /opt/scripts/FillTestsystem_ITSM.pl /opt/otrs/Custom/
 
 # inject test data
 echo -e "\\n${yellow}Inject test data:"
 echo -e "${green}"
-sudo perl Custom/FillTestsystem.pl
-rm /opt/otrs/Custom/FillTestsystem.pl
+sudo perl Custom/FillTestsystem_ITSM.pl
+rm /opt/otrs/Custom/FillTestsystem_ITSM.pl
 echo -e "\\n${green}***********Finished ALL***********"
 echo -e "\\n${yellow}======================================================================="
 echo -e "${reset}\\n"
