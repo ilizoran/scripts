@@ -62,10 +62,9 @@ if ( $Opts{'l'} eq 'ITSM' ) {
     @Modules = (
         'GeneralCatalog',
         'ITSMCore',
-        'ITSMIncidentProblemManagement',
+
         'ITSMConfigurationManagement',
-        'ITSMChangeManagement',
-        'ITSMServiceLevelManagement',
+
         'ImportExport',
     );
 }
