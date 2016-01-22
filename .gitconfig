@@ -1,0 +1,34 @@
+[user]
+	name = s7design
+	email = otrs@s7designcreative.com
+[branch]
+	autosetuprebase = always
+[color]
+        ui = auto
+[alias]
+        co = checkout
+        ccf = !sudo perl ../OTRSCodePolicy/bin/otrs.CodePolicy.pl --file $@
+        ccd = !sudo perl ../OTRSCodePolicy/bin/otrs.CodePolicy.pl --directory $@
+        cca = !sudo perl ../OTRSCodePolicy/bin/otrs.CodePolicy.pl --all $@
+        cc = !sudo perl ../OTRSCodePolicy/bin/otrs.CodePolicy.pl $@
+        ac = !sudo perl ../module-tools/AddChangeLog.pl $@
+        pcp = !git pull && git cherry-pick $@
+        merge-pr = pull --squash --no-commit
+        c = commit
+        s = status
+        d = diff
+        ds = diff --staged
+        a = add
+        pl = pull
+        plr = pull --rebase
+        rp = remote prune origin
+        link = !perl ../module-tools/link.pl /ws/$1 .
+        unlink = !perl ../module-tools/remove_links.pl .
+        rc = !perl bin/otrs.Console.pl Maint::Config::Rebuild $@
+        dc = !perl bin/otrs.Console.pl Maint::Cache::Delete $@
+        ut = !perl bin/otrs.Console.pl Dev::UnitTest::Run $@
+        ct = !perl bin/otrs.Console.pl Dev::Tools::TranslationsUpdate $@
+        db = !git branch -vv | grep gone | sed 's/gone].*/gone]/g'
+
+[core]
+	excludesfile = ~/.gitignore_global
