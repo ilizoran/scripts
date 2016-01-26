@@ -198,23 +198,7 @@ system("sudo $Config{ApacheRestartCommand}");
 
 # install database
 print STDERR "--- Creating Database...\n";
-system("psql -U postgres -h localhost -c \"CREATE DATABASE otrs WITH ENCODING 'UTF8'\"");
-sleep 3;
-system("psql -U postgres -h localhost -l");
-# my $DSN = 'DBI:mysql:';
-# my $DBH = DBI->connect(
-#     $DSN,
-#     $Config{DatabaseUserName},
-#     $Config{DatabasePassword},
-# );
-# $DBH->do("CREATE DATABASE $DatabaseSystemName charset utf8");
-# $DBH->do("use $DatabaseSystemName");
-
-# print STDERR "--- Creating database user and privileges...\n";
-# $DBH->do(
-#     "GRANT ALL PRIVILEGES ON $DatabaseSystemName.* TO $DatabaseSystemName\@localhost IDENTIFIED BY '$DatabaseSystemName' WITH GRANT OPTION;"
-# );
-# $DBH->do('FLUSH PRIVILEGES');
+system("PGPASSWORD=root psql -U postgres -h localhost -c \"CREATE DATABASE otrs WITH ENCODING 'UTF8'\"");
 
 # copy the InstallTestsystemDatabase.pl script in otrs/bin folder, execute it, and delete it
 system("cp $Config{ModuleToolsRoot}InstallTestsystemDatabase.pl $InstallDir/bin/");
