@@ -10,11 +10,11 @@ echo "${yellow}Delete ZZZ* files:"
 echo "${yellow}======================================================================="
 echo -e "\\n"
 
-psql -U postgres -h localhost -l
-dropdb -h localhost  -U postgres otrs
+PGPASSWORD=root psql -U postgres -h localhost -l
+PGPASSWORD=root dropdb -h localhost  -U postgres otrs
 echo -e "\\n${green}DB i is droped\\n"
 
-psql -U postgres -h localhost -l
+PGPASSWORD=root psql -U postgres -h localhost -l
 
 echo -e "\\n${green}Done\\n"
 echo -e "\\n${yellow}======================================================================="
