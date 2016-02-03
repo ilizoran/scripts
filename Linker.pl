@@ -101,6 +101,12 @@ if ( $Opts{'l'} eq 'OTRSBusiness' ) {
     );
 }
 
+if ( $Opts{'l'} eq 'Fred' ) {
+    @Modules = (
+        'Fred',
+    );
+}
+
 
 
 # reverse the list of packages for uninstall
