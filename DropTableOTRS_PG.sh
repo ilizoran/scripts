@@ -3,12 +3,14 @@ yellow=`tput setaf 3`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-
-# delete ZZZ* files in tmp
+# delete DB otrs
 echo -e "\\n"
-echo "${yellow}Delete ZZZ* files:"
+echo "${yellow}Drop database:"
 echo "${yellow}======================================================================="
 echo -e "\\n"
+
+sudo /etc/init.d/postgresql restart
+bg
 
 PGPASSWORD=root psql -U postgres -h localhost -l
 PGPASSWORD=root dropdb -h localhost  -U postgres otrs

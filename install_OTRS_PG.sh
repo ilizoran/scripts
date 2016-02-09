@@ -3,7 +3,7 @@ yellow=`tput setaf 3`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-/opt/scripts/rebuild_config.sh
+# drop data base
 /opt/scripts/DropTableOTRS_PG.sh
 
 # delete ZZZ* files in tmp
