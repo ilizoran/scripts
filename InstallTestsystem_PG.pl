@@ -130,9 +130,6 @@ my $ConfigInjectStr = <<"EOD";
     \$Self->{'AdminEmail'}          = 'root\@localhost';
     \$Self->{'Package::Timeout'}    = '120';
 
-    \$Self->{'CheckEmailAddresses'} = 0;
-    \$Self->{'CheckMXRecord'}       = 0;
-
     # Fred
     \$Self->{'Fred::BackgroundColor'} = '#006ea5';
     \$Self->{'Fred::SystemName'}      = '$SystemName';
