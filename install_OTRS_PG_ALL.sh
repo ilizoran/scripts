@@ -75,26 +75,22 @@ sudo perl ../scripts/otrs.CleanLog.pl
 echo -e "\\n${yellow}Restart apache:"
 echo -e "${green}"
 sudo service apache2 restart
-echo -e "\\n${yellow}======================================================================="
-# copy the FillTestsystem.pl script in otrs/Custom folder, execute it, and delete it
-cp /opt/scripts/FillTestsystem.pl /opt/otrs/Custom/
 
 echo -e "\\n${yellow}======================================================================="
-
 perl ../scripts/Linker.pl -a install -m /opt -o /opt/otrs -l All -d
 
 
 echo -e "\\n${green}***********Finished install ALL packages***********"
 
 echo -e "\\n${yellow}======================================================================="
-# copy the FillTestsystem.pl script in otrs/Custom folder, execute it, and delete it
-cp /opt/scripts/FillTestsystem.pl /opt/otrs/Custom/
+# copy the FillTestsystem_ITSM.pl script in otrs/Custom folder, execute it, and delete it
+cp /opt/scripts/FillTestsystem_ITSM.pl /opt/otrs/Custom/
 
 # inject test data
 echo -e "\\n${yellow}Inject test data:"
 echo -e "${green}"
-sudo perl Custom/FillTestsystem.pl
-rm /opt/otrs/Custom/FillTestsystem.pl
+sudo perl Custom/FillTestsystem_ITSM.pl
+rm /opt/otrs/Custom/FillTestsystem_ITSM.pl
 
 echo -e "\\n${yellow}======================================================================="
 
