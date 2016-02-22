@@ -107,6 +107,24 @@ if ( $Opts{'l'} eq 'Fred' ) {
     );
 }
 
+if ( $Opts{'l'} eq 'All' ) {
+    @Modules = (
+        'GeneralCatalog',
+        'ITSMCore',
+        'ITSMIncidentProblemManagement',
+        'ITSMConfigurationManagement',
+        'ITSMChangeManagement',
+        'ITSMServiceLevelManagement',
+        'ImportExport',
+        'TimeAccounting',
+        'Campain',
+        'Finance',
+        'OTRSCICustomSearch',
+        'OTRSDynamicFieldAttachment',
+
+    );
+}
+
 
 
 # reverse the list of packages for uninstall
