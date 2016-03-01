@@ -127,6 +127,8 @@ if ( $Opts{'l'} eq 'All' ) {
         'Finance',
         'OTRSCICustomSearch',
         'OTRSDynamicFieldAttachment',
+        'OTRSCustomerPortal',
+        'FAQ',
 
     );
 }
