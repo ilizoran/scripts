@@ -67,7 +67,13 @@ echo -e "\\n${yellow}Restart apache:"
 echo -e "${green}"
 sudo service apache2 restart
 
-echo -e "\\n${green}***********Finished OTRS***********"
+echo -e "\\n${green}***********Finished OTRSCustomerPortal***********"
+
+echo -e "\\n${yellow}======================================================================="
+
+perl ../scripts/Linker.pl -a install -m /opt -o /opt/otrs -l OTRSCustomerPortal -d
+
+echo -e "\\n${green}***********Finished OTRSCustomerPortal***********"
 
 echo -e "\\n${yellow}======================================================================="
 

@@ -107,6 +107,12 @@ if ( $Opts{'l'} eq 'Fred' ) {
     );
 }
 
+if ( $Opts{'l'} eq 'OTRSCustomerPortal' ) {
+    @Modules = (
+        'OTRSCustomerPortal',
+    );
+}
+
 if ( $Opts{'l'} eq 'All' ) {
     @Modules = (
         'GeneralCatalog',
