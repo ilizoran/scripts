@@ -113,6 +113,12 @@ if ( $Opts{'l'} eq 'OTRSCustomerPortal' ) {
     );
 }
 
+if ( $Opts{'l'} eq 'OTRSCodePolicy' ) {
+    @Modules = (
+        'OTRSCodePolicy',
+    );
+}
+
 if ( $Opts{'l'} eq 'All' ) {
     @Modules = (
         'GeneralCatalog',
@@ -129,7 +135,7 @@ if ( $Opts{'l'} eq 'All' ) {
         'OTRSDynamicFieldAttachment',
         'OTRSCustomerPortal',
         'FAQ',
-
+        'OTRSRestorePendingInformation'
     );
 }
 
