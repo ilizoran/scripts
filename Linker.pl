@@ -109,6 +109,8 @@ if ( $Opts{'l'} eq 'Fred' ) {
 
 if ( $Opts{'l'} eq 'OTRSCustomerPortal' ) {
     @Modules = (
+        'OTRSDynamicFieldAttachment',
+        'FAQ',
         'OTRSCustomerPortal',
     );
 }

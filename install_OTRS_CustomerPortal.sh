@@ -3,8 +3,16 @@ yellow=`tput setaf 3`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
+echo -e "\\n${yellow}======================================================================="
+
+/opt/scripts/otrs_customer_portal_uninstall.sh
+
+echo -e "\\n${green}***********Finished Uninstall OTRSCustomerPortal***********"
+
+echo -e "\\n${yellow}======================================================================="
+
 # drop data base
-/opt/scripts/DropTableOTRS_PG.sh
+/opt/scripts/DropTableOTRS.sh
 
 # delete ZZZ* files in tmp
 echo -e "\\n"
@@ -27,10 +35,10 @@ echo -e "\\n${yellow}===========================================================
 
 
 echo -e "\\n${yellow}======================================================================="
-# copy the InstallTestsystem_PG.pl script in otrs/Custom folder, execute it, and delete it
-cp /opt/scripts/InstallTestsystem_PG.pl /opt/otrs/Custom/
-sudo perl Custom/InstallTestsystem_PG.pl -p /opt/otrs -f /opt/Fred/
-rm /opt/otrs/Custom/InstallTestsystem_PG.pl
+# copy the InstallTestsystem.pl script in otrs/Custom folder, execute it, and delete it
+cp /opt/scripts/InstallTestsystem.pl /opt/otrs/Custom/
+sudo perl Custom/InstallTestsystem.pl -p /opt/otrs -f /opt/Fred/
+rm /opt/otrs/Custom/InstallTestsystem.pl
 echo -e "\\n${yellow}======================================================================="
 
 echo -e "${yellow}\\n"
@@ -67,24 +75,22 @@ echo -e "\\n${yellow}Restart apache:"
 echo -e "${green}"
 sudo service apache2 restart
 
-echo -e "\\n${green}***********Finished OTRSCustomerPortal***********"
+echo -e "\\n${yellow}======================================================================="
+
+/opt/scripts/otrs_customer_portal_install.sh
+
+echo -e "\\n${green}***********Finished install OTRSCustomerPortal packages***********"
 
 echo -e "\\n${yellow}======================================================================="
 
-perl ../scripts/Linker.pl -a install -m /opt -o /opt/otrs -l OTRSCustomerPortal -d
-
-echo -e "\\n${green}***********Finished OTRSCustomerPortal***********"
-
-echo -e "\\n${yellow}======================================================================="
-
-# copy the FillTestsystem.pl script in otrs/Custom folder, execute it, and delete it
-cp /opt/scripts/FillTestsystem.pl /opt/otrs/Custom/
+# copy the FillTestsystem_ITSM.pl script in otrs/Custom folder, execute it, and delete it
+cp /opt/scripts/FillTestsystem_ITSM.pl /opt/otrs/Custom/
 
 # inject test data
 echo -e "\\n${yellow}Inject test data:"
 echo -e "${green}"
-sudo perl Custom/FillTestsystem.pl
-rm /opt/otrs/Custom/FillTestsystem.pl
+sudo perl Custom/FillTestsystem_ITSM.pl
+rm /opt/otrs/Custom/FillTestsystem_ITSM.pl
 
 echo -e "\\n${yellow}======================================================================="
 
@@ -93,7 +99,3 @@ echo -e "\\n${green}***********Finished***********"
 
 echo -e "\\n${yellow}======================================================================="
 echo -e "${reset}\\n"
-
-
-
-
