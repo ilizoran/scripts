@@ -157,6 +157,14 @@ my $ConfigInjectStr = <<"EOD";
     #     platform            => 'ANY',
     # };
 
+    # phantomjs SeleniumTestsConfig
+    # \$Self->{'SeleniumTestsConfig'} = {
+    #     remote_server_addr  => '10.0.1.8',
+    #     port                => '4444',
+    #     browser_name        => 'firefox',
+    #     platform            => 'ANY',
+    # };
+
     # firefox SeleniumTestsConfig
     \$Self->{'SeleniumTestsConfig'} = {
         remote_server_addr  => 'localhost',
