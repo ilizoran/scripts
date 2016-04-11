@@ -143,11 +143,11 @@ my $ConfigInjectStr = <<"EOD";
     \$Self->{'Ticket::Service'} =  1;
 
     # Send mail
-    # \$Self->{'SendmailModule::AuthPassword'} =  'neznam';
-    # \$Self->{'SendmailModule::AuthUser'} =  'zilibasic\@s7designcreative.com';
-    # \$Self->{'SendmailModule::Port'} =  '25';
-    # \$Self->{'SendmailModule::Host'} =  'mail.s7designcreative.com';
-    # \$Self->{'SendmailModule'} =  'Kernel::System::Email::SMTP';
+    \$Self->{'SendmailModule::AuthPassword'} =  'neznam';
+    \$Self->{'SendmailModule::AuthUser'} =  'zilibasic\@s7designcreative.com';
+    \$Self->{'SendmailModule::Port'} =  '25';
+    \$Self->{'SendmailModule::Host'} =  'mail.s7designcreative.com';
+    \$Self->{'SendmailModule'} =  'Kernel::System::Email::SMTP';
 
     # phantomjs SeleniumTestsConfig
     # \$Self->{'SeleniumTestsConfig'} = {
