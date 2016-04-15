@@ -1,0 +1,973 @@
+---
+Activities:
+  Activity-065a2f3e86409fb90119f6d8fbbafc34:
+    ActivityDialogs:
+    - ActivityDialog-18d3edde5f6db627a357f9cc4d74bd9a
+    - ActivityDialog-72b13a89dbb8b9995a2b95375ab86a1e
+    - ActivityDialog-69591eac3ed6cdd3f572710070f67105
+    - ActivityDialog-d29cc822b9b68990e83d9a7425277305
+    - ActivityDialog-846d531d2bbbf620653201253d06ae42
+    - ActivityDialog-f106f58cca3db20c4e549d71cf2befd4
+    - ActivityDialog-242421cffabfef6606168381ba906dd0
+    - ActivityDialog-80492f627dec7d63170339f95ff30e4f
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      ActivityDialog:
+        '1': ActivityDialog-18d3edde5f6db627a357f9cc4d74bd9a
+        '2': ActivityDialog-72b13a89dbb8b9995a2b95375ab86a1e
+        '3': ActivityDialog-69591eac3ed6cdd3f572710070f67105
+        '4': ActivityDialog-d29cc822b9b68990e83d9a7425277305
+        '5': ActivityDialog-846d531d2bbbf620653201253d06ae42
+        '6': ActivityDialog-f106f58cca3db20c4e549d71cf2befd4
+        '7': ActivityDialog-242421cffabfef6606168381ba906dd0
+        '8': ActivityDialog-80492f627dec7d63170339f95ff30e4f
+    CreateTime: 2013-12-02 17:29:44
+    EntityID: Activity-065a2f3e86409fb90119f6d8fbbafc34
+    ID: '9'
+    Name: Start Creditor Process
+  Activity-1058d21076a1af3e63a0f66ccea6807b:
+    ActivityDialogs:
+    - ActivityDialog-9e032194dee047aad90590701d7a9cc1
+    - ActivityDialog-72b13a89dbb8b9995a2b95375ab86a1e
+    - ActivityDialog-69591eac3ed6cdd3f572710070f67105
+    - ActivityDialog-d29cc822b9b68990e83d9a7425277305
+    - ActivityDialog-846d531d2bbbf620653201253d06ae42
+    - ActivityDialog-f106f58cca3db20c4e549d71cf2befd4
+    - ActivityDialog-242421cffabfef6606168381ba906dd0
+    - ActivityDialog-80492f627dec7d63170339f95ff30e4f
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      ActivityDialog:
+        '1': ActivityDialog-9e032194dee047aad90590701d7a9cc1
+        '2': ActivityDialog-72b13a89dbb8b9995a2b95375ab86a1e
+        '3': ActivityDialog-69591eac3ed6cdd3f572710070f67105
+        '4': ActivityDialog-d29cc822b9b68990e83d9a7425277305
+        '5': ActivityDialog-846d531d2bbbf620653201253d06ae42
+        '6': ActivityDialog-f106f58cca3db20c4e549d71cf2befd4
+        '7': ActivityDialog-242421cffabfef6606168381ba906dd0
+        '8': ActivityDialog-80492f627dec7d63170339f95ff30e4f
+    CreateTime: 2013-12-02 17:29:44
+    EntityID: Activity-1058d21076a1af3e63a0f66ccea6807b
+    ID: '10'
+    Name: Approval of Invoice
+  Activity-6f9e83ccfde6e9c469aa539318ff46b4:
+    ActivityDialogs:
+    - ActivityDialog-e0744677125a314a40c7a2da7892dc75
+    - ActivityDialog-72b13a89dbb8b9995a2b95375ab86a1e
+    - ActivityDialog-69591eac3ed6cdd3f572710070f67105
+    - ActivityDialog-d29cc822b9b68990e83d9a7425277305
+    - ActivityDialog-846d531d2bbbf620653201253d06ae42
+    - ActivityDialog-f106f58cca3db20c4e549d71cf2befd4
+    - ActivityDialog-242421cffabfef6606168381ba906dd0
+    - ActivityDialog-80492f627dec7d63170339f95ff30e4f
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      ActivityDialog:
+        '1': ActivityDialog-e0744677125a314a40c7a2da7892dc75
+        '2': ActivityDialog-72b13a89dbb8b9995a2b95375ab86a1e
+        '3': ActivityDialog-69591eac3ed6cdd3f572710070f67105
+        '4': ActivityDialog-d29cc822b9b68990e83d9a7425277305
+        '5': ActivityDialog-846d531d2bbbf620653201253d06ae42
+        '6': ActivityDialog-f106f58cca3db20c4e549d71cf2befd4
+        '7': ActivityDialog-242421cffabfef6606168381ba906dd0
+        '8': ActivityDialog-80492f627dec7d63170339f95ff30e4f
+    CreateTime: 2013-12-02 17:29:44
+    EntityID: Activity-6f9e83ccfde6e9c469aa539318ff46b4
+    ID: '11'
+    Name: Payment
+  Activity-c1fc9babea2d700efa206b1b89138a88:
+    ActivityDialogs:
+    - ActivityDialog-69591eac3ed6cdd3f572710070f67105
+    - ActivityDialog-d29cc822b9b68990e83d9a7425277305
+    - ActivityDialog-846d531d2bbbf620653201253d06ae42
+    - ActivityDialog-f106f58cca3db20c4e549d71cf2befd4
+    - ActivityDialog-242421cffabfef6606168381ba906dd0
+    - ActivityDialog-80492f627dec7d63170339f95ff30e4f
+    - ActivityDialog-df497fd400fde126d958c1ab065c0aa1
+    ChangeTime: 2015-01-23 12:17:02
+    Config:
+      ActivityDialog:
+        '1': ActivityDialog-69591eac3ed6cdd3f572710070f67105
+        '2': ActivityDialog-d29cc822b9b68990e83d9a7425277305
+        '3': ActivityDialog-846d531d2bbbf620653201253d06ae42
+        '4': ActivityDialog-f106f58cca3db20c4e549d71cf2befd4
+        '5': ActivityDialog-242421cffabfef6606168381ba906dd0
+        '6': ActivityDialog-80492f627dec7d63170339f95ff30e4f
+        '7': ActivityDialog-df497fd400fde126d958c1ab065c0aa1
+    CreateTime: 2013-12-02 17:29:44
+    EntityID: Activity-c1fc9babea2d700efa206b1b89138a88
+    ID: '12'
+    Name: Creditor Process complete
+ActivityDialogs:
+  ActivityDialog-18d3edde5f6db627a357f9cc4d74bd9a:
+    ChangeTime: 2016-02-18 18:15:23
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Basic Invoice Information
+      FieldOrder:
+      - Title
+      - DynamicField_CreditorAG
+      - DynamicField_CreditorINC
+      - DynamicField_CreditorSA
+      - DynamicField_CreditorBR
+      - DynamicField_CreditorMY
+      - DynamicField_BillingDate
+      - DynamicField_InvoiceNumbercredi
+      - DynamicField_paymentduedate
+      - DynamicField_TypeOfPayment
+      - DynamicField_CurrencyNet
+      - DynamicField_totalamountnet
+      - DynamicField_CurrencyGross
+      - DynamicField_totalamountgross
+      - DynamicField_defereldissolved
+      - Responsible
+      - DynamicField_additionalinformation
+      - DynamicField_TicketType
+      - DynamicField_listingdone
+      - Article
+      Fields:
+        Article:
+          Config:
+            ArticleType: note-internal
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_BillingDate:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: Invoice Date
+          Display: '2'
+        DynamicField_CreditorAG:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CreditorBR:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CreditorINC:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CreditorMY:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CreditorSA:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CurrencyGross:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CurrencyNet:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceNumbercredi:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '2'
+        DynamicField_TicketType:
+          DefaultValue: Creditor
+          DescriptionLong: ''
+          DescriptionShort: select "Creditor"
+          Display: '1'
+        DynamicField_TypeOfPayment:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '2'
+        DynamicField_additionalinformation:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_defereldissolved:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_listingdone:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_paymentduedate:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_totalamountgross:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '2'
+        DynamicField_totalamountnet:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '2'
+        Responsible:
+          DefaultValue: sf
+          DescriptionLong: ''
+          DescriptionShort: Approver
+          Display: '1'
+        Title:
+          DefaultValue: Rechnung
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2013-12-02 17:29:42
+    EntityID: ActivityDialog-18d3edde5f6db627a357f9cc4d74bd9a
+    ID: '9'
+    Name: Basic Invoice Information
+  ActivityDialog-242421cffabfef6606168381ba906dd0:
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Accounting 5
+      FieldOrder:
+      - DynamicField_CostCenter5
+      - DynamicField_CostAccount5
+      - DynamicField_InvoiceAmountNet5
+      - DynamicField_InvoiceAmountGross5
+      Fields:
+        DynamicField_CostAccount5:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CostCenter5:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountGross5:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountNet5:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2014-02-21 09:34:23
+    EntityID: ActivityDialog-242421cffabfef6606168381ba906dd0
+    ID: '15'
+    Name: Accounting 5
+  ActivityDialog-69591eac3ed6cdd3f572710070f67105:
+    ChangeTime: 2015-06-18 12:28:06
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Accounting 1
+      FieldOrder:
+      - DynamicField_CostCenter1
+      - DynamicField_CostAccount1
+      - DynamicField_InvoiceAmountNet1
+      - DynamicField_InvoiceAmountGross1
+      - DynamicField_accountinginformationcomplete
+      Fields:
+        DynamicField_CostAccount1:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CostCenter1:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountGross1:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountNet1:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_accountinginformationcomplete:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2014-02-21 09:30:18
+    EntityID: ActivityDialog-69591eac3ed6cdd3f572710070f67105
+    ID: '11'
+    Name: Accounting 1
+  ActivityDialog-72b13a89dbb8b9995a2b95375ab86a1e:
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Accounting Information
+      FieldOrder:
+      - DynamicField_accrualdissolved
+      - DynamicField_accruedamount
+      - DynamicField_defereldissolved
+      - DynamicField_additionalinformation
+      - DynamicField_accountinginformationcomplete
+      - DynamicField_listingdone
+      - State
+      - PendingTime
+      Fields:
+        DynamicField_accountinginformationcomplete:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_accrualdissolved:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_accruedamount:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_additionalinformation:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_defereldissolved:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_listingdone:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        PendingTime:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        State:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '2'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2013-12-02 17:29:42
+    EntityID: ActivityDialog-72b13a89dbb8b9995a2b95375ab86a1e
+    ID: '8'
+    Name: Accounting Information
+  ActivityDialog-80492f627dec7d63170339f95ff30e4f:
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Accounting 6
+      FieldOrder:
+      - DynamicField_CostCenter6
+      - DynamicField_CostAccount6
+      - DynamicField_InvoiceAmountNet6
+      - DynamicField_InvoiceAmountGross6
+      Fields:
+        DynamicField_CostAccount6:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CostCenter6:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountGross6:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountNet6:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+      Interface:
+      - AgentInterface
+      Permission: note
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2014-02-21 09:35:21
+    EntityID: ActivityDialog-80492f627dec7d63170339f95ff30e4f
+    ID: '16'
+    Name: Accounting 6
+  ActivityDialog-846d531d2bbbf620653201253d06ae42:
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Accounting 3
+      FieldOrder:
+      - DynamicField_CostCenter3
+      - DynamicField_CostAccount3
+      - DynamicField_InvoiceAmountNet3
+      - DynamicField_InvoiceAmountGross3
+      Fields:
+        DynamicField_CostAccount3:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CostCenter3:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountGross3:
+          Display: '1'
+        DynamicField_InvoiceAmountNet3:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2014-02-21 09:32:42
+    EntityID: ActivityDialog-846d531d2bbbf620653201253d06ae42
+    ID: '13'
+    Name: Accounting 3
+  ActivityDialog-9e032194dee047aad90590701d7a9cc1:
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Approval of Invoice
+      FieldOrder:
+      - DynamicField_invoiceapproved
+      - Article
+      Fields:
+        Article:
+          Config:
+            ArticleType: note-internal
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '2'
+        DynamicField_invoiceapproved:
+          DefaultValue: yes
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '2'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2013-12-02 17:29:42
+    EntityID: ActivityDialog-9e032194dee047aad90590701d7a9cc1
+    ID: '10'
+    Name: Approval of Invoice
+  ActivityDialog-d29cc822b9b68990e83d9a7425277305:
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Accounting 2
+      FieldOrder:
+      - DynamicField_CostCenter2
+      - DynamicField_CostAccount2
+      - DynamicField_InvoiceAmountNet2
+      - DynamicField_InvoiceAmountGross2
+      Fields:
+        DynamicField_CostAccount2:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CostCenter2:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountGross2:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountNet2:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2014-02-21 09:32:06
+    EntityID: ActivityDialog-d29cc822b9b68990e83d9a7425277305
+    ID: '12'
+    Name: Accounting 2
+  ActivityDialog-df497fd400fde126d958c1ab065c0aa1:
+    ChangeTime: 2015-01-23 12:15:33
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: 'CP: Admin View'
+      FieldOrder:
+      - Title
+      - DynamicField_additionalinformation
+      - DynamicField_bankcreditcardstatement
+      - DynamicField_ccdocumentnumber
+      - DynamicField_accruedamount
+      - DynamicField_accrualdissolved
+      - DynamicField_defereldissolved
+      Fields:
+        DynamicField_accrualdissolved:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_accruedamount:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_additionalinformation:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_bankcreditcardstatement:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_ccdocumentnumber:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_defereldissolved:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        Title:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2015-01-23 12:15:33
+    EntityID: ActivityDialog-df497fd400fde126d958c1ab065c0aa1
+    ID: '47'
+    Name: 'CP: Admin View'
+  ActivityDialog-e0744677125a314a40c7a2da7892dc75:
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Payment information
+      FieldOrder:
+      - DynamicField_CreditorAG
+      - DynamicField_CreditorINC
+      - DynamicField_CreditorSA
+      - DynamicField_TypeOfPayment
+      - DynamicField_paymentstate
+      - DynamicField_dateofpayment
+      - DynamicField_bankcreditcardstatement
+      - DynamicField_ccdocumentnumber
+      - DynamicField_paymentduedate
+      - DynamicField_CurrencyNet
+      - DynamicField_totalamountnet
+      - DynamicField_CurrencyGross
+      - DynamicField_totalamountgross
+      - DynamicField_listingdone
+      - DynamicField_additionalinformation
+      - Title
+      - Article
+      Fields:
+        Article:
+          Config:
+            ArticleType: note-internal
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CreditorAG:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CreditorINC:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CreditorSA:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CurrencyGross:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CurrencyNet:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_TypeOfPayment:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_additionalinformation:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_bankcreditcardstatement:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_ccdocumentnumber:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_dateofpayment:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_listingdone:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_paymentduedate:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_paymentstate:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_totalamountgross:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_totalamountnet:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        Title:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2013-12-02 17:29:42
+    EntityID: ActivityDialog-e0744677125a314a40c7a2da7892dc75
+    ID: '7'
+    Name: Payment information
+  ActivityDialog-f106f58cca3db20c4e549d71cf2befd4:
+    ChangeTime: 2014-11-09 18:30:43
+    Config:
+      DescriptionLong: ''
+      DescriptionShort: Accounting 4
+      FieldOrder:
+      - DynamicField_CostCenter4
+      - DynamicField_CostAccount4
+      - DynamicField_InvoiceAmountNet4
+      - DynamicField_InvoiceAmountGross4
+      Fields:
+        DynamicField_CostAccount4:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_CostCenter4:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountGross4:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+        DynamicField_InvoiceAmountNet4:
+          DefaultValue: ''
+          DescriptionLong: ''
+          DescriptionShort: ''
+          Display: '1'
+      Interface:
+      - AgentInterface
+      Permission: ''
+      RequiredLock: 0
+      SubmitAdviceText: ''
+      SubmitButtonText: ''
+    CreateTime: 2014-02-21 09:33:25
+    EntityID: ActivityDialog-f106f58cca3db20c4e549d71cf2befd4
+    ID: '14'
+    Name: Accounting 4
+Process:
+  Activities:
+  - Activity-065a2f3e86409fb90119f6d8fbbafc34
+  - Activity-1058d21076a1af3e63a0f66ccea6807b
+  - Activity-6f9e83ccfde6e9c469aa539318ff46b4
+  - Activity-c1fc9babea2d700efa206b1b89138a88
+  ChangeTime: 2014-11-09 18:30:43
+  Config:
+    Description: Abwicklung Kreditoren Prozess
+    Path:
+      Activity-065a2f3e86409fb90119f6d8fbbafc34:
+        Transition-c4aba4f2b55f8281b325d80e7f61588d:
+          ActivityEntityID: Activity-1058d21076a1af3e63a0f66ccea6807b
+          TransitionAction:
+          - TransitionAction-3654dc913a094334cf9f23785881d059
+          - TransitionAction-d636fc8a3cdd49716278a0c0846a8390
+          - TransitionAction-d0462438c48bcf36b08a82b1272332a3
+      Activity-1058d21076a1af3e63a0f66ccea6807b:
+        Transition-81df4e38e73ebe96067af70a1d901c0d:
+          ActivityEntityID: Activity-065a2f3e86409fb90119f6d8fbbafc34
+          TransitionAction:
+          - TransitionAction-dce180247c25c6ba7cebb76ab438bbfc
+          - TransitionAction-c773654984855c97786d5ba4b9112315
+        Transition-87f0aff5e734cacce653f2ea2601e821:
+          ActivityEntityID: Activity-6f9e83ccfde6e9c469aa539318ff46b4
+          TransitionAction:
+          - TransitionAction-b5246a819a314c4e73930a9b7d52282b
+      Activity-6f9e83ccfde6e9c469aa539318ff46b4:
+        Transition-ba56404171c26dac2f15a10988749634:
+          ActivityEntityID: Activity-c1fc9babea2d700efa206b1b89138a88
+          TransitionAction:
+          - TransitionAction-2ba756cfd8699d59ec1d71926ecaef0a
+      Activity-c1fc9babea2d700efa206b1b89138a88: {}
+    StartActivity: Activity-065a2f3e86409fb90119f6d8fbbafc34
+    StartActivityDialog: ActivityDialog-18d3edde5f6db627a357f9cc4d74bd9a
+  CreateTime: 2013-12-02 17:29:44
+  EntityID: Process-d3605bd47eb81fb9e9b0118bc9161245
+  ID: '3'
+  Layout:
+    Activity-065a2f3e86409fb90119f6d8fbbafc34:
+      left: '233'
+      top: '21'
+    Activity-1058d21076a1af3e63a0f66ccea6807b:
+      left: '634'
+      top: '157'
+    Activity-6f9e83ccfde6e9c469aa539318ff46b4:
+      left: '275'
+      top: '317'
+    Activity-c1fc9babea2d700efa206b1b89138a88:
+      left: '785'
+      top: '333'
+  Name: Creditor Process
+  State: Active
+  StateEntityID: S1
+  TransitionActions:
+  - TransitionAction-3654dc913a094334cf9f23785881d059
+  - TransitionAction-d0462438c48bcf36b08a82b1272332a3
+  - TransitionAction-d636fc8a3cdd49716278a0c0846a8390
+  - TransitionAction-c773654984855c97786d5ba4b9112315
+  - TransitionAction-dce180247c25c6ba7cebb76ab438bbfc
+  - TransitionAction-b5246a819a314c4e73930a9b7d52282b
+  - TransitionAction-2ba756cfd8699d59ec1d71926ecaef0a
+  Transitions:
+  - Transition-c4aba4f2b55f8281b325d80e7f61588d
+  - Transition-81df4e38e73ebe96067af70a1d901c0d
+  - Transition-87f0aff5e734cacce653f2ea2601e821
+  - Transition-ba56404171c26dac2f15a10988749634
+TransitionActions:
+  TransitionAction-2ba756cfd8699d59ec1d71926ecaef0a:
+    ChangeTime: 2014-11-09 18:30:45
+    Config:
+      Config:
+        State: closed successful
+      Module: Kernel::System::ProcessManagement::TransitionAction::TicketStateSet
+    CreateTime: 2013-12-02 17:29:42
+    EntityID: TransitionAction-2ba756cfd8699d59ec1d71926ecaef0a
+    ID: '15'
+    Name: Close ticket successfully
+  TransitionAction-3654dc913a094334cf9f23785881d059:
+    ChangeTime: 2014-11-09 18:30:45
+    Config:
+      Config:
+        bookingstate: open
+        invoiceapproved: '-'
+        paymentstate: open
+      Module: Kernel::System::ProcessManagement::TransitionAction::DynamicFieldSet
+    CreateTime: 2013-12-02 17:29:42
+    EntityID: TransitionAction-3654dc913a094334cf9f23785881d059
+    ID: '17'
+    Name: set payment-/booking-state to OPEN + invoiceapproved to empty
+  TransitionAction-b5246a819a314c4e73930a9b7d52282b:
+    ChangeTime: 2014-11-11 15:03:26
+    Config:
+      Config:
+        ResponsibleID: '1'
+      Module: Kernel::System::ProcessManagement::TransitionAction::TicketResponsibleSet
+    CreateTime: 2014-07-08 14:12:55
+    EntityID: TransitionAction-b5246a819a314c4e73930a9b7d52282b
+    ID: '21'
+    Name: Creditor Responsible Reset
+  TransitionAction-c773654984855c97786d5ba4b9112315:
+    ChangeTime: 2014-11-11 13:20:18
+    Config:
+      Config:
+        State: new
+      Module: Kernel::System::ProcessManagement::TransitionAction::TicketStateSet
+    CreateTime: 2013-12-02 17:29:43
+    EntityID: TransitionAction-c773654984855c97786d5ba4b9112315
+    ID: '20'
+    Name: Set Ticket to new
+  TransitionAction-d0462438c48bcf36b08a82b1272332a3:
+    ChangeTime: 2014-11-11 13:20:33
+    Config:
+      Config:
+        State: open
+      Module: Kernel::System::ProcessManagement::TransitionAction::TicketStateSet
+    CreateTime: 2013-12-02 17:29:43
+    EntityID: TransitionAction-d0462438c48bcf36b08a82b1272332a3
+    ID: '19'
+    Name: Set Ticket to open
+  TransitionAction-d636fc8a3cdd49716278a0c0846a8390:
+    ChangeTime: 2014-11-11 12:29:24
+    Config:
+      Config:
+        ProcessManagementActivityID: Activity-1058d21076a1af3e63a0f66ccea6807b
+      Module: Kernel::System::ProcessManagement::TransitionAction::DynamicFieldSet
+    CreateTime: 2013-12-02 17:29:43
+    EntityID: TransitionAction-d636fc8a3cdd49716278a0c0846a8390
+    ID: '18'
+    Name: set activity 10
+  TransitionAction-dce180247c25c6ba7cebb76ab438bbfc:
+    ChangeTime: 2014-11-11 12:18:41
+    Config:
+      Config:
+        ProcessManagementActivityID: Activity-065a2f3e86409fb90119f6d8fbbafc34
+        TicketType: Unclassified
+      Module: Kernel::System::ProcessManagement::TransitionAction::DynamicFieldSet
+    CreateTime: 2013-12-02 17:29:42
+    EntityID: TransitionAction-dce180247c25c6ba7cebb76ab438bbfc
+    ID: '16'
+    Name: Back to Start-CreditorProcess
+Transitions:
+  Transition-81df4e38e73ebe96067af70a1d901c0d:
+    ChangeTime: 2014-11-09 18:30:44
+    Config:
+      Condition:
+        '1':
+          Fields:
+            DynamicField_invoiceapproved:
+              Match: no
+              Type: String
+          Type: and
+      ConditionLinking: and
+    CreateTime: 2013-12-02 17:29:43
+    EntityID: Transition-81df4e38e73ebe96067af70a1d901c0d
+    ID: '11'
+    Name: invoice approved no
+  Transition-87f0aff5e734cacce653f2ea2601e821:
+    ChangeTime: 2014-11-09 18:30:44
+    Config:
+      Condition:
+        '1':
+          Fields:
+            DynamicField_invoiceapproved:
+              Match: yes
+              Type: String
+          Type: and
+      ConditionLinking: and
+    CreateTime: 2013-12-02 17:29:43
+    EntityID: Transition-87f0aff5e734cacce653f2ea2601e821
+    ID: '10'
+    Name: Invoice approved yes
+  Transition-ba56404171c26dac2f15a10988749634:
+    ChangeTime: 2014-11-09 18:30:44
+    Config:
+      Condition:
+        '1':
+          Fields:
+            DynamicField_bookingstate:
+              Match: accounted
+              Type: String
+            DynamicField_listingdone:
+              Match: '1'
+              Type: String
+            DynamicField_paymentstate:
+              Match: paid
+              Type: String
+          Type: and
+      ConditionLinking: and
+    CreateTime: 2013-12-02 17:29:43
+    EntityID: Transition-ba56404171c26dac2f15a10988749634
+    ID: '9'
+    Name: Booking state is accounted
+  Transition-c4aba4f2b55f8281b325d80e7f61588d:
+    ChangeTime: 2014-11-09 18:30:44
+    Config:
+      Condition:
+        '1':
+          Fields:
+            DynamicField_TicketType:
+              Match: Creditor
+              Type: String
+          Type: and
+      ConditionLinking: and
+    CreateTime: 2013-12-02 17:29:44
+    EntityID: Transition-c4aba4f2b55f8281b325d80e7f61588d
+    ID: '12'
+    Name: Ticket Type Creditor
