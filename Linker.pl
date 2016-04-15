@@ -137,7 +137,8 @@ if ( $Opts{'l'} eq 'All' ) {
         'OTRSDynamicFieldAttachment',
         'OTRSCustomerPortal',
         'FAQ',
-        'OTRSRestorePendingInformation'
+        'OTRSRestorePendingInformation',
+        'OTRSBusiness',
     );
 }
 
