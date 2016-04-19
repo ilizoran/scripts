@@ -145,6 +145,7 @@ if ( $Opts{'l'} eq 'All' ) {
         'SystemMonitoring',
         'OTRSDynamicFieldAttachment',
         'OTRSCustomerPortal',
+        'OTRSCodePolicy',
     );
 }
 
