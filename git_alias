@@ -1,0 +1,26 @@
+[color]
+    ui = auto
+[alias]
+    co = checkout
+    ccf = !perl ../OTRSCodePolicy/bin/otrs.CodePolicy.pl --file $@
+    ccd = !perl ../OTRSCodePolicy/bin/otrs.CodePolicy.pl --directory $@
+    cca = !perl ../OTRSCodePolicy/bin/otrs.CodePolicy.pl --all $@
+    cc = !perl ../OTRSCodePolicy/bin/otrs.CodePolicy.pl $@
+    ac = !perl ../module-tools/AddChangeLog.pl $@
+    pcp = !git pull && git cherry-pick $@
+    merge-pr = pull --squash --no-commit
+    c = commit
+    s = status
+    d = diff
+    ds = diff --staged
+    a = add
+    pl = pull
+    plr = pull --rebase
+    rp = remote prune origin
+    link = !perl ../module-tools/link.pl /ws/$1 .
+        unlink = !perl ../module-tools/remove_links.pl .
+    rc = !perl bin/otrs.RebuildConfig.pl $@
+    dc = !perl bin/otrs.DeleteCache.pl $@
+    ut = !perl bin/otrs.UnitTest.pl $@
+    ct = !perl bin/otrs.CreateTranslationFile.pl -l $@
+    db  = !git branch -vv | grep gone | sed 's/gone].*/gone]/g'

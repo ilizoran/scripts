@@ -44,12 +44,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -250,14 +250,10 @@ alias loga='sudo gedit /var/log/apache2/error.log'
 alias listag='gedit /root/.gitconfig'
 alias sp='bin/otrs.SetPermissions.pl --otrs-user=otrs  --web-group=www-data /opt/otrs'
 
-
 alias sf='../scripts/sync_fork.sh'
-alias rc='../scripts/rebuild_config.sh'
-# alias otrs='../scripts/install_OTRS.sh'
-alias faq='perl ../scripts/Linker.pl -a install -m /opt -o /opt/otrs -l FAQ -d'
-alias itsm='perl ../scripts/Linker.pl -a install -m /opt -o /opt/otrs -l ITSM -d'
-alias otrsitsm='../scripts/install_OTRS_ITSM.sh'
+alias sf5='../scripts/sync_fork_5_0.sh'
 
+alias rc='../scripts/rebuild_config.sh'
 alias modunins='perl ../module-tools/module-linker.pl uninstall'
 alias modins='perl ../module-tools/module-linker.pl install'
 alias ut='perl bin/otrs.Console.pl Dev::UnitTest::Run --test'
@@ -270,8 +266,23 @@ alias ss='mc /tmp'
 alias cl='perl bin/otrs.Console.pl Maint::Session::DeleteAll'
 alias c='mc /opt/otrs/var/tmp'
 alias ols='perl bin/otrs.Console.pl List'
-alias sd='java -jar ../selenium/selenium-server-standalone-2.45.0.jar'
-alias r='../scripts/reset_system.sh'alias gt='perl bin/otrs.Console.pl Dev::Tools::Database::RandomDataInsert --generate-tickets 20 --articles-per-ticket 2 --generate-users 2 --generate-customer-users 2  --generate-queues 2 --mark-tickets-as-seen'
+alias sd='java -jar ../scripts/selenium-server-standalone-2.53.0.jar'
+alias r='../scripts/reset_system.sh'
+alias gt='perl bin/otrs.Console.pl Dev::Tools::Database::RandomDataInsert --generate-tickets 20 --articles-per-ticket 2 --generate-users 2 --generate-customer-users 2  --generate-queues 2 --mark-tickets-as-seen'
+
+# install systems
+alias otrs='../scripts/install_OTRS.sh'
+alias otrsPG='../scripts/install_OTRS_PG.sh'
+alias otrsPGAll='../scripts/install_OTRS_PG_ALL.sh'
+alias otrsVanila='../scripts/install_OTRS_Vanila.sh'
+alias otrsPortal='../scripts/install_OTRS_CustomerPortal.sh'
+alias otrsAll='../scripts/install_OTRS_All.sh'
+
+# unlink all modules
+alias ul='perl ../scripts/Linker.pl -a uninstall -m /opt -o /opt/otrs -l All -d'
+alias up='../scripts/otrs_customer_portal_uninstall.sh'
+
+alias fetch='perl bin/otrs.Console.pl Maint::PostMaster::Read < '
 
 
 PERL_MB_OPT="--install_base \"/home/s7otrs/perl5\""; export PERL_MB_OPT;
