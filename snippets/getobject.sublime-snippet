@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[
+\$Kernel::OM->Get('Kernel::System::${1:Object}')${2}]]></content>
+    <tabTrigger>getobject</tabTrigger>
+    <scope>source.perl</scope>
+</snippet>

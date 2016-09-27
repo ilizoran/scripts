@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+[% WRAPPER JSOnDocumentComplete %]
+<script type="text/javascript">
+    ${2:Content}
+</script>
+[% END %]
+]]></content>
+    <tabTrigger>JSOnDocumentCokmplete</tabTrigger>
+    <scope>source.tt2,text.html.tt2,source.tt3,text.html.tt3</scope>
+    <description>JsOnDocumentComplete Tag</description>
+</snippet>

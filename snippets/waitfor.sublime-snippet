@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+# wait until page has loaded, if necessary
+\$Selenium->WaitFor( JavaScript => 'return typeof(\$) === "function" && \$("${1}").length' );
+]]></content>
+    <tabTrigger>waitfor</tabTrigger>
+    <scope>source.perl</scope>
+</snippet>

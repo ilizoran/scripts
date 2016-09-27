@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[
+\$Kernel::OM->Get('Kernel::Config')${1}]]></content>
+    <tabTrigger>getconfig</tabTrigger>
+    <scope>source.perl</scope>
+</snippet>

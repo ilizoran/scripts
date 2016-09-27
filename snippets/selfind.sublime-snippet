@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[
+\$Selenium->find_element( "${1:#ID}", 'css' )${2};]]></content>
+    <tabTrigger>selfind</tabTrigger>
+    <scope>source.perl</scope>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+print STDERR "${1:\$Var}\n";
+${2}
+]]></content>
+    <tabTrigger>printstderr</tabTrigger>
+    <scope>source.perl</scope>
+</snippet>

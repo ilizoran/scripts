@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+for my \$Needed (qw(${1:NeededParams})) {
+    if ( !\$Param{\$Needed} ) {
+        \$Self->{LogObject}->Log( Priority => 'error', Message => "Need \$Needed!" );
+        return;
+    }
+}
+]]></content>
+<tabTrigger>neededParams</tabTrigger>
+<scope>source.perl</scope>
+</snippet>

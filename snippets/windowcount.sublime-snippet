@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+\$Selenium->WaitFor( WindowCount => ${1} );
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>window</tabTrigger>
+    <scope>source.perl</scope>
+</snippet>

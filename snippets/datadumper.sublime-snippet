@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+use Data::Dumper;
+print STDERR Dumper(\\${1:\$Var});
+${2}
+]]></content>
+    <tabTrigger>datadumper</tabTrigger>
+    <scope>source.perl</scope>
+</snippet>

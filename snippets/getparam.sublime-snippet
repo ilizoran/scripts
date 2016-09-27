@@ -1,0 +1,5 @@
+<snippet>
+    <content><![CDATA[\$Self->{ParamObject}->GetParam(Param => ${1:'Name'});]]></content>
+    <tabTrigger>getparam</tabTrigger>
+    <scope>source.perl</scope>
+</snippet>

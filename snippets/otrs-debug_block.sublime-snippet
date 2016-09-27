@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+if ( \$${1:Config}->{Debug} ) {
+
+    \$Kernel::OM->Get('Kernel::System::Log')->Log(
+        Priority => 'debug',
+        Message  => "Debug - ${2:PackageName}: $3.",
+    );
+}
+]]></content>
+	<tabTrigger>odebugblock</tabTrigger>
+</snippet>

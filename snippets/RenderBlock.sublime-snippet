@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+[% RenderBlockStart('${1:Name}') %]
+${2:Content}
+[% RenderBlockEnd('${1:Name}') %]
+]]></content>
+    <tabTrigger>RenderBlock</tabTrigger>
+    <scope>source.tt2,text.html.tt2,source.tt3,text.html.tt3</scope>
+    <description>RenderBlock Tag</description>
+</snippet>
