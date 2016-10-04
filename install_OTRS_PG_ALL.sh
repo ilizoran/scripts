@@ -8,7 +8,7 @@ echo -e "\\n${yellow}===========================================================
 perl ../scripts/Linker.pl -a uninstall -m /opt -o /opt/otrs -l All -d
 
 
-echo -e "\\n${green}***********Finished TimeAccounting***********"
+echo -e "\\n${green}***********Finished Uninstaling Packages***********"
 
 echo -e "\\n${yellow}======================================================================="
 
