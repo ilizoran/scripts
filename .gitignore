@@ -1,0 +1,13 @@
+.project
+.sublimelinterrc
+.externalToolBuilders
+.gnupg
+.settings
+.includepath
+.DS_Store
+.vscode/*
+*.swp
+*.swo
+*~
+
+/OTRS-packages
