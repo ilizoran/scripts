@@ -52,12 +52,12 @@ EOF
     exit 1;
 }
 
-my @ITSMModules;
+my @Modules;
 
 $Opts{'l'} = $Opts{'l'} || 'ITSM';
 
 if ( $Opts{'l'} eq 'ITSM' ) {
-    @ITSMModules = (
+    @Modules = (
         'GeneralCatalog',
         'ITSMCore',
         'ITSMIncidentProblemManagement',
@@ -69,14 +69,87 @@ if ( $Opts{'l'} eq 'ITSM' ) {
 }
 
 if ( $Opts{'l'} eq 'FAQ' ) {
-    @ITSMModules = (
+    @Modules = (
         'FAQ',
     );
 }
 
+if ( $Opts{'l'} eq 'Survey' ) {
+    @Modules = (
+        'Survey',
+    );
+}
+
 if ( $Opts{'l'} eq 'TimeAccounting' ) {
-    @ITSMModules = (
+    @Modules = (
         'TimeAccounting',
+    );
+}
+
+
+if ( $Opts{'l'} eq 'OTRSMasterSlave' ) {
+    @Modules = (
+        'OTRSMasterSlave',
+    );
+}
+
+if ( $Opts{'l'} eq 'OTRSBusiness' ) {
+    @Modules = (
+        'OTRSBusiness',
+    );
+}
+
+if ( $Opts{'l'} eq 'Fred' ) {
+    @Modules = (
+        'Fred',
+    );
+}
+
+if ( $Opts{'l'} eq 'OTRSCustomerPortal' ) {
+    @Modules = (
+        'OTRSDynamicFieldAttachment',
+        'FAQ',
+        'OTRSCustomerPortal',
+    );
+}
+
+if ( $Opts{'l'} eq 'OTRSCodePolicy' ) {
+    @Modules = (
+        'OTRSCodePolicy',
+    );
+}
+
+if ( $Opts{'l'} eq 'All' ) {
+    @Modules = (
+        # 'GeneralCatalog',
+        # 'ITSMCore',
+        # 'ITSMConfigurationManagement',
+        # 'ImportExport',
+        # 'TimeAccounting',
+        # 'Campain',
+        # #'Contract-Management',
+        # 'FAQ',
+        # 'Finance',
+        # #'OTRSAdditionalCalendars',
+        # 'OTRSBusiness',
+        # 'OTRSCICustomSearch',
+        # #'OTRSDownloadStatsServer',
+        # 'OTRSMasterSlave',
+        # 'OTRSRestorePendingInformation',
+        # #'OTRSStatsOTRSGroup',
+        # 'SaaSSOAP',
+        # 'SaaSCockpit',
+        # 'Survey',
+        # 'SystemMonitoring',
+        # 'OTRSDynamicFieldAttachment',
+        # 'OTRSCustomerPortal',
+        # 'OTRSCodePolicy',
+        # 'BursatecStats',
+        # 'otrsescalationsuspend',
+        # 'OTRSTicketMaskExtensions',
+        'OTRSHideShowDynamicFields',
+        # 'OTRSSchedulerFAQTicketCreate',
+        # 'OTRSTicketWorkflow',
     );
 }
 
@@ -84,7 +157,7 @@ if ( $Opts{'l'} eq 'TimeAccounting' ) {
 
 # reverse the list of packages for uninstall
 if ( $Opts{'a'} eq 'uninstall' ) {
-    @ITSMModules = reverse @ITSMModules;
+    @Modules = reverse @Modules;
 }
 
 # replace . with _
@@ -109,7 +182,7 @@ $ModuleToolsPath =~ s{ / \z }{}gxms;
 system("cp $ModuleToolsPath/DatabaseInstall.pl $Opts{'o'}/bin");
 system("cp $ModuleToolsPath/CodeInstall.pl $Opts{'o'}/bin");
 
-for my $Module (@ITSMModules) {
+for my $Module (@Modules) {
 
     # get name of SOPM file
     my $SOPMFile = $Module . '.sopm';
