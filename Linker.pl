@@ -146,6 +146,12 @@ if ( $Opts{'l'} eq 'All' ) {
         'OTRSDynamicFieldAttachment',
         'OTRSCustomerPortal',
         'OTRSCodePolicy',
+        'BursatecStats',
+        'otrsescalationsuspend',
+        'OTRSTicketMaskExtensions',
+        'OTRSHideShowDynamicFields',
+        'OTRSSchedulerFAQTicketCreate',
+        'OTRSTicketWorkflow',
     );
 }
 
