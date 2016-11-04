@@ -147,7 +147,7 @@ if ( $Opts{'l'} eq 'All' ) {
         'OTRSCustomerPortal',
         'OTRSCodePolicy',
         'BursatecStats',
-        'otrsescalationsuspend',
+        'OTRSEscalationSuspend',
         'OTRSTicketMaskExtensions',
         'OTRSHideShowDynamicFields',
         'OTRSSchedulerFAQTicketCreate',
