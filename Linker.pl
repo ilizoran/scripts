@@ -67,6 +67,7 @@ if ( $Opts{'l'} eq 'ITSM' ) {
         'ITSMChangeManagement',
         'ITSMServiceLevelManagement',
         'ImportExport',
+        'BursatecStats',
     );
 }
 
@@ -123,29 +124,72 @@ if ( $Opts{'l'} eq 'OTRSCodePolicy' ) {
 
 if ( $Opts{'l'} eq 'All' ) {
     @Modules = (
-        'GeneralCatalog',
-        'ITSMCore',
-        'ITSMConfigurationManagement',
-        'ImportExport',
-        'TimeAccounting',
-        'Campain',
-        #'Contract-Management',
-        'FAQ',
-        'Finance',
-        #'OTRSAdditionalCalendars',
+        # 'GeneralCatalog',
+        # 'ITSMCore',
+        # 'ITSMConfigurationManagement',
+        # 'ImportExport',
+        # 'TimeAccounting',
+        # 'Campain',
+        # 'Contract-Management',
+        # 'FAQ',
+        # 'Finance',
+        # 'OTRSAdditionalCalendars',
         'OTRSBusiness',
-        'OTRSCICustomSearch',
-        #'OTRSDownloadStatsServer',
-        'OTRSMasterSlave',
-        'OTRSRestorePendingInformation',
-        #'OTRSStatsOTRSGroup',
-        'SaaSSOAP',
-        'SaaSCockpit',
-        'Survey',
-        'SystemMonitoring',
-        'OTRSDynamicFieldAttachment',
-        'OTRSCustomerPortal',
-        'OTRSCodePolicy',
+        # 'OTRSCICustomSearch',
+        # 'OTRSDownloadStatsServer',
+        # 'OTRSMasterSlave',
+        # 'OTRSRestorePendingInformation',
+        # 'OTRSStatsOTRSGroup',
+        # 'SaaSSOAP',
+        # 'SaaSCockpit',
+        # 'Survey',
+        # 'SystemMonitoring',
+        # 'OTRSDynamicFieldAttachment',
+        # 'OTRSCustomerPortal',
+        # 'OTRSCodePolicy',
+        # 'otrsescalationsuspend',
+        # 'OTRSTicketMaskExtensions',
+        # 'OTRSHideShowDynamicFields',
+        # 'OTRSSchedulerFAQTicketCreate',
+        # 'OTRSTicketWorkflow',
+
+        # 'GitInterface',
+        # 'PackageCompatibility',
+        # 'OTRSCodeHub',
+        # 'OPMS',
+        # 'OTRSContinuousIntegrationMaster',
+    );
+}
+
+if ( $Opts{'l'} eq 'Renesas' ) {
+    @Modules = (
+        'RenesasArticleDraft',
+    );
+}
+if ( $Opts{'l'} eq 'ContactField' ) {
+    @Modules = (
+        'OTRSCustomContactFields',
+    );
+}
+
+if ( $Opts{'l'} eq 'CI' ) {
+    @Modules = (
+        'GitInterface',
+        'PackageCompatibility',
+        'OTRSCodeHub',
+        'OPMS',
+        'OTRSContinuousIntegrationMaster',
+    );
+}
+
+if ( $Opts{'l'} eq 'SBQR' ) {
+    @Modules = (
+        'OTRSServiceBasedQueueRouting',
+    );
+}
+
+if ( $Opts{'l'} eq 'BS' ) {
+    @Modules = (
         'BursatecStats',
         'OTRSEscalationSuspend',
         'OTRSTicketMaskExtensions',
@@ -155,7 +199,38 @@ if ( $Opts{'l'} eq 'All' ) {
     );
 }
 
+if ( $Opts{'l'} eq 'ES' ) {
+    @Modules = (
+        'OTRSEscalationSuspend',
+    );
+}
 
+if ( $Opts{'l'} eq 'CONT' ) {
+    @Modules = (
+        'CONTPAQiStats',
+    );
+}
+
+if ( $Opts{'l'} eq 'Fred' ) {
+    @Modules = (
+        'Fred',
+    );
+}
+
+if ( $Opts{'l'} eq 'OPMS' ) {
+    @Modules = (
+        'GitInterface',
+        'PackageCompatibility',
+        'OTRSCodeHub',
+        'OPMS',
+    );
+}
+
+if ( $Opts{'l'} eq 'CAL' ) {
+    @Modules = (
+        'OTRSAppointmentCalendar',
+    );
+}
 
 # reverse the list of packages for uninstall
 if ( $Opts{'a'} eq 'uninstall' ) {

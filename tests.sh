@@ -1,231 +1,60 @@
 
-  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyEditQuestions
- read -p "Press [Enter] key to continue..."
-   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyStats
- read -p "Press [Enter] key to continue..."
-   perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Output/SurveyMenu/Generic
- read -p "Press [Enter] key to continue..."
-   perl bin/otrs.Console.pl Dev::UnitTest::Run --test SurveyOverview/Small
- read -p "Press [Enter] key to continue..."
-   perl bin/otrs.Console.pl Dev::UnitTest::Run --test PublicSurvey
+ # perl bin/otrs.Console.pl Dev::UnitTest::Run --test CIMaster
+ # perl bin/otrs.Console.pl Dev::UnitTest::Run --test Sort
+ # perl bin/otrs.Console.pl Dev::UnitTest::Run --test Index
+  
+ # perl bin/otrs.Console.pl Dev::UnitTest::Run --directory CIMaster
+ # perl bin/otrs.Console.pl Dev::UnitTest::Run --directory Console/Command/Dev/CIMaster
+ # perl bin/otrs.Console.pl Dev::UnitTest::Run --directory Console/Command/Maint/CIMaster
 
 
+ # perl bin/otrs.Console.pl Dev::UnitTest::Run --directory Selenium/Output/Dashboard/CIMaster
+ # # read -p "Press [Enter] key to continue..."
 
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyAdd
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyEdit
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyOverview
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentSurveyZoom
-
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQExplorer
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQZoom
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQPrint
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerFAQSearch
-
-
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test PublicFAQExplorer
- # read -p "Press [Enter] key to continue..."
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test PublicFAQRSS
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test PublicFAQZoom
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test PublicFAQPrint
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test PublicFAQSearch
-
-#  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentFAQExplorer
- # read -p "Press [Enter] key to continue..."
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentFAQLanguage
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentFAQZoom
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentFAQPrint
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentFAQJournal
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentFAQEdit
-
-
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminCustomerUserGroup
-#  read -p "Press [Enter] key to continue..."
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminDynamicField
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminGenericInterfaceWebservice
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminNotification
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminPGP
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminQueueAutoResponse
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminQueueTemplates
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminRoleGroup
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminRoleUser
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminSystemAddress
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminTemplate
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminTemplateAttachment
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/AdminUserGroup
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/ProcessManagement/AdminProcessManagementActivity
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/ProcessManagement/AdminProcessManagementTransition
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/ProcessManagement/AdminProcessManagementTransitionAction
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Admin/ProcessManagement/AdminProcessManagementActivityDialog
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentCustomerInformationCenter
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketAttachment
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketBounce
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketCustomer
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketEmail
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketForward
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketPhone
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketPhoneCommon
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketPlain
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketSearch
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/Language
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Customer/CustomerTicketAttachment
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Customer/CustomerTicketOverview
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Customer/CustomerTicketProcess
-#   read -p "Press [Enter] key to continue..."
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Output/NavBar/CustomerTicketProcess
-#   read -p "Press [Enter] key to continue..."
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Agent/AgentTicketProcess
-#   read -p "Press [Enter] key to continue..."
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Output/NavBar/AgentTicketProcess
-#  # read -p "Press [Enter] key to continue..."
-
-
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Customer/CustomerTicketZoom
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Output/ToolBar/CICSearchCustomerID
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Output/ToolBar/CICSearchCustomerUser
-#  read -p "Press [Enter] key to continue..."
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --test Selenium/Output/ToolBar/TicketSearchProfile
-#  read -p "Press [Enter] key to continue..."
-
-
-# perl bin/otrs.Console.pl Dev::UnitTest::Run --directory Selenium
-
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminPostMasterFilter
-#  read -p "Press [Enter] key to continue..."
-
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminITSMCIPAllocate
- # read -p "Press [Enter] key to continue..."
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentITSMSLA
- # read -p "Press [Enter] key to continue..."
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentITSMSLAPrint
- # read -p "Press [Enter] key to continue..."
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentITSMSLAZoom
- # read -p "Press [Enter] key to continue..."
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentITSMService
- # read -p "Press [Enter] key to continue..."
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentITSMServicePrint
- # read -p "Press [Enter] key to continue..."
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentITSMServiceZoom
- # read -p "Press [Enter] key to continue..."
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminGeneralCatalog
- # read -p "Press [Enter] key to continue..."
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test GenralCatalogPreferencesGeneric
+ #  perl bin/otrs.Console.pl Dev::UnitTest::Run --directory Selenium/Agent/CIMaster
  # read -p "Press [Enter] key to continue..."
 
- # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminUser
- # read -p "Press [Enter] key to continue..."
 
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminAttachment
- # read -p "Press [Enter] key to continue..."
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminAutoResponse
- # read -p "Press [Enter] key to continue..."
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminEmailAccount
- # read -p "Press [Enter] key to continue..."
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminNotificationEvent
- # read -p "Press [Enter] key to continue..."
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminPostMasterFilter
- # read -p "Press [Enter] key to continue..."
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminPriority
- # read -p "Press [Enter] key to continue..."
- #    perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminRole
- # read -p "Press [Enter] key to continue..."
-  # perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminSystemAddress
- # read -p "Press [Enter] key to continue..."
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminTemplate
- # read -p "Press [Enter] key to continue..."
- #    perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminType
- # read -p "Press [Enter] key to continue..."
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminUser
+perl bin/otrs.Console.pl Dev::UnitTest::Run --directory Chat
 
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test NotificationView
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test Team
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test Closed
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test Old
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test DeleteExpired
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test Console/Command/Maint/Stats/Reports/Generate
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test Console/Command/Maint/Stats/Reports/GenerateCron
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test Signalling
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test NotificationViewSearch
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test StatsReport
 
- #  perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminQueue
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminAutoResponse
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminSalutation
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminSignature
- # read -p "Press [Enter] key to continue..."
- #   perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminTemplate
- # read -p "Press [Enter] key to continue..."
- #    perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminAttachment
- # read -p "Press [Enter] key to continue..."
+#
+#	Selenium BS
+#
+
+# perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminGenericInterfaceWebserviceImportExample
+
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminContactWithData
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminDynamicFieldContactWithData
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test AdminDynamicFieldDatabase
+
+#perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentAppointmentResourceOverview
+
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentContactWithDataSearch
+
+# failed 
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentDynamicFieldDatabase
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentNotificationView
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentStatisticsReports
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentTicketAttachmentView
+
+# this one run three tests agent, customer and public
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test Chat
+
+# this one run two tests agent, customer
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test VideoChat
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test AgentTicketAttachmentView
+
+perl bin/otrs.Console.pl Dev::UnitTest::Run --test CustomerDynamicFieldDatabase
 
 

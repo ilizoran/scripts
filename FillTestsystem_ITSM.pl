@@ -145,6 +145,13 @@ my $Config = {
     ],
 };
 
+    my $ID = $CommonObject{GroupObject}->GroupAdd(
+        Name    => 'ci-frontend',
+        Comment => 'comment describing the group',
+        ValidID => 1,
+        UserID  => 1,
+    );
+
 # Add Agents
 AGENT:
 for my $Agent ( @{ $Config->{Agents} } ) {
