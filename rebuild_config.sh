@@ -14,7 +14,11 @@ sudo bin/otrs.SetPermissions.pl --otrs-user=s7otrs --web-group=www-data /opt/otr
 # Rebuild the default configuration of OTRS.
 echo -e "\\n${yellow}Rebuild the default configuration of OTRS:"
 echo -e "${green}"
+perl bin/otrs.Console.pl Maint::Config::Rebuild --cleanup
+perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory /opt/otrs/Kernel/Config/Files/
+
 perl bin/otrs.Console.pl Maint::Config::Rebuild
+
 
 # Deletes cache files created by OTRS.
 echo -e "\\n${yellow}Deletes cache files created by OTRS:"
