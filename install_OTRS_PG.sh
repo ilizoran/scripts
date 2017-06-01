@@ -5,6 +5,7 @@ reset=`tput sgr0`
 
 # drop data base
 /opt/scripts/DropTableOTRS_PG.sh
+/opt/scripts/module_tools_rel1.sh
 
 # delete ZZZ* files in tmp
 echo -e "\\n"
@@ -79,6 +80,9 @@ echo -e "\\n${yellow}Inject test data:"
 echo -e "${green}"
 sudo perl Custom/FillTestsystem.pl
 rm /opt/otrs/Custom/FillTestsystem.pl
+
+/opt/scripts/module_tools_master.sh
+/opt/scripts/rebuild_config.sh
 
 echo -e "\\n${yellow}======================================================================="
 

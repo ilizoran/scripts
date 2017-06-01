@@ -6,6 +6,7 @@ reset=`tput sgr0`
 echo -e "\\n${yellow}======================================================================="
 
 /opt/scripts/otrs_all_uninstall.sh
+/opt/scripts/module_tools_rel1.sh
 
 echo -e "\\n${green}***********Finished Uninstall All ***********"
 
@@ -91,6 +92,9 @@ echo -e "\\n${yellow}Inject test data:"
 echo -e "${green}"
 sudo perl Custom/FillTestsystem_ITSM.pl
 rm /opt/otrs/Custom/FillTestsystem_ITSM.pl
+
+/opt/scripts/module_tools_master.sh
+/opt/scripts/rebuild_config.sh
 
 echo -e "\\n${yellow}======================================================================="
 
