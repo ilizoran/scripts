@@ -5,6 +5,7 @@ reset=`tput sgr0`
 
 /opt/scripts/DropTableOTRS.sh
 /opt/scripts/module_tools_rel1.sh
+/opt/scripts/fred_otrs.sh
 
 # delete ZZZ* files in tmp
 echo -e "\\n"
