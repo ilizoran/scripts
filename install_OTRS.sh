@@ -5,6 +5,14 @@ reset=`tput sgr0`
 
 /opt/scripts/DropTableOTRS.sh
 
+cd /opt/module-tools
+git checkout rel-1_0
+cd /opt/otrs
+
+cd /opt/Fred
+git checkout rel-4_0
+cd /opt/otrs
+
 sudo perl ../module-tools/module-linker.pl uninstall /opt/Fred /opt/otrs
 
 # delete ZZZ* files in tmp
@@ -72,6 +80,10 @@ echo -e "${green}"
 sudo perl Custom/FillTestsystem.pl
 rm /opt/otrs/Custom/FillTestsystem.pl
 
+cd /opt/module-tools
+git checkout master
+cd /opt/otrs
+
 echo -e "\\n${yellow}======================================================================="
 
 echo -e "\\n${green}***********Finished***********"
@@ -79,7 +91,3 @@ echo -e "\\n${green}***********Finished***********"
 
 echo -e "\\n${yellow}======================================================================="
 echo -e "${reset}\\n"
-
-
-
-
