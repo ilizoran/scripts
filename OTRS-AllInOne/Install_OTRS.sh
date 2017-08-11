@@ -30,7 +30,7 @@ elif [[ $OTRS == *"otrs6"* ]]
 fi
 
 # If this is first installation of OTRS for this version with this script copy content from the original folder.
-if [[ ! -d $FrameworkRoot ]];
+if [[ ! -d $FrameworkRoot ]]
 	then echo -e "\n${yellow}Preparing $OTRSName $DBType"
 		 echo -e "${yellow}======================================================================="
 		 echo -e "${green}"
@@ -79,6 +79,7 @@ if [[ $FirstInstall == 1 ]]
 	then SitePath="/etc/apache2/other/$OTRS.conf"
 		 sudo cp $SitePath /etc/apache2/sites-available/
 		 sudo a2ensite $OTRS
-		 echo "Remember to enable ModPerl for this site"
 fi
+
+echo -e "Remember to enable ModPerl for this site"
 

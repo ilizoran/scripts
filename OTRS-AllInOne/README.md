@@ -1,7 +1,7 @@
 OTRS Scripts for installing multiple instances with Mysql or Postgresql DB type
 ===============================================================================
 
-These scripts require to have already predifined OTRS folders or to have default OTRS folder in /opt/otrs
+These scripts require to have already predefined OTRS folders or to have default OTRS folder in /opt/otrs
 
 Install single OTRS instance
 ----------------------------
@@ -9,7 +9,8 @@ Install single OTRS instance
 Script: Install_OTRS.sh
 
 For installing single OTRS instance. Script require two parameters. First is for name of the site installing.
-Please stay in the boundaries of naming sites in teplate (e.g otrs4-m otrs5-p otrs6-m ... ).
+Please stay in the boundaries of naming sites in teplate (e.g otrs4-m otrs5-p otrs6-m ... ). It is a good practice to mark with last letter which 
+database type you are using.
 Second is for database type Mysql or Postgresql.
 
 
@@ -60,3 +61,11 @@ After enabling ModPerl for appropriate site you can use following address to acc
 Example: http://localhost/otrs5-m/index.pl?
 
 Note between localhost/...../index.pl? is the name of site you activated ModPerl for.
+
+
+Pull latest OTRS changes from github
+---------------------------------------
+
+Script: Pull_All.sh 
+
+To get latest git changes on each of installed OTRS instances.
