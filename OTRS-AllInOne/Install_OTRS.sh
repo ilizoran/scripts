@@ -6,14 +6,14 @@ reset=`tput sgr0`
 OTRS=$1
 DBType=$2
 
-# If DB type param is not available use Mysql.
+# If DBType param is not available use Mysql as default.
 if [[ ! $DBType ]]
 	then DBType="Mysql"
 fi
 
-# Define needed variables.
+# Define needed script variables.
 FrameworkRoot="/opt/$OTRS"
-FirstInstall=0
+FredVersion="master"
 
 if [[ $OTRS == *"otrs4"* ]]
 	then OTRSName="OTRS 4"
@@ -22,11 +22,9 @@ if [[ $OTRS == *"otrs4"* ]]
 elif [[ $OTRS == *"otrs5"* ]]
 	then OTRSName="OTRS 5"
 		 FrameworkVersion="rel-5_0"
-		 FredVersion="master"
 elif [[ $OTRS == *"otrs6"* ]]
 	then OTRSName="OTRS 6"
 		 FrameworkVersion="master"
-		 FredVersion="master"
 fi
 
 # If this is first installation of OTRS for this version with this script copy content from the original folder.
@@ -48,17 +46,25 @@ if [[ ! -d $FrameworkRoot ]]
 		 sudo rm $FrameworkRoot/Kernel/Config.pm
 		 echo -e "\n${yellow}======================================================================="
 
-		 # First installation flag.
-		 FirstInstall=1
+		 # Grant Mysql DB privileges to the 'otrs' user to be able to create other necessary users.
+		 if [[ $DBType == "Mysql" ]]
+			then echo -e "\n${yellow}Give 'otrs' user all privileges for MySQL DB"
+		 	 	 echo -e "${yellow}======================================================================="
+
+			     sudo echo "GRANT ALL ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+			 	 sudo echo "GRANT GRANT OPTION ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+
+				 echo -e "${green}Done"
+		 fi
 fi
 
 # Copy custom configuration.
 sudo cp -a /opt/scripts/OTRS-AllInOne/config.pl /opt/module-tools/etc/config.pl
 
-# Install OTRS.
+# Select appropriate Fred version.
 echo -e "\\n"
 echo -e "${yellow}Checkout Fred to correct branch"
-echo -e "${yellow}======================================================================="
+echo -e "======================================================================="
 echo -e "${green}"
 
 cd /opt/Fred/
@@ -69,17 +75,23 @@ cd $FrameworkRoot
 # Install OTRS.
 echo -e "\\n"
 echo -e "${yellow}Installing $OTRSName $DBType"
-echo -e "${yellow}======================================================================="
+echo -e "======================================================================="
 echo -e "${green}"
 
 sudo -u s7otrs /opt/module-tools/bin/otrs.ModuleTools.pl TestSystem::Instance::Setup --framework-directory $FrameworkRoot --fred-directory /opt/Fred --database-type $DBType
 
 echo -e "\\n${yellow}======================================================================="
-if [[ $FirstInstall == 1 ]]
-	then SitePath="/etc/apache2/other/$OTRS.conf"
-		 sudo cp $SitePath /etc/apache2/sites-available/
-		 sudo a2ensite $OTRS
-fi
 
-echo -e "Remember to enable ModPerl for this site"
+# Disable OTRS site and enable it again.
+echo -e "${yellow}Enable OTRS $OTRS site"
+echo -e "======================================================================="
+echo -e "${green}"
 
+SitePath="/etc/apache2/other/$OTRS.conf"
+sudo cp $SitePath /etc/apache2/sites-available/
+sudo a2ensite $OTRS
+
+echo -e "\\n${yellow}======================================================================="
+
+# Enable ModPerl for this site.
+perl /opt/scripts/OTRS-AllInOne/ActivateSite.sh $OTRS

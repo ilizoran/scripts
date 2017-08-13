@@ -7,7 +7,7 @@ Active=$1
 
 # Disable ModPerl in every OTRS site.
 echo -e "\\n"
-echo -e "${yellow}Enable ModPerl for" $Active
+echo -e "${yellow}Enable ModPerl for" $Active "site"
 echo -e "${yellow}======================================================================="
 echo -e "${green}"
 
@@ -22,7 +22,7 @@ do
 	# Enable modPerl for active site.
 	if [[ $SiteFile == $Active* ]] 
 		then sudo sed -i -e "s/<IfModule mod_perlOFF.c>/<IfModule mod_perl.c>/" /etc/apache2/sites-enabled/$SiteFile
-		echo "Site" ${SiteFile%?????} "is enabled" 
+		echo "ModPerl for site" ${SiteFile%?????} "is enabled" 
 	else 
 		sudo sed -i -e "s/<IfModule mod_perl.c>/<IfModule mod_perlOFF.c>/" /etc/apache2/sites-enabled/$SiteFile
 	fi
