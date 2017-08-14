@@ -9,7 +9,7 @@ Install single OTRS instance
 Script: Install_OTRS.sh
 
 For installing single OTRS instance. Script require two parameters. First is for name of the site installing.
-Please stay in the boundaries of naming sites in teplate (e.g otrs4-m otrs5-p otrs6-m ... ). It is a good practice to mark with last letter which 
+Please stay in the boundaries of naming sites in template (e.g otrs4-m otrs5-p otrs6-m ... ). It is a good practice to mark with last letter which 
 database type you are using.
 Second is for database type Mysql or Postgresql.
 
@@ -19,7 +19,8 @@ Example:
 
 
 This will install OTRS 5 with Mysql database on site otrs5-m. When installing on Postgresql please keep site name
-lowercased. Postgresql is case sensitive database and it creates problem with uppercase letters.
+lowercased. Postgresql is case sensitive database and it creates problem with uppercase letters.Script will also activate ModPerl for 
+OTRS site which is installed.
 
 
 Activate single OTRS site
