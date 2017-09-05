@@ -49,6 +49,20 @@ elif [[ $FrameworkRoot == "/opt/otrs6"* ]]
 
 		 echo -e "\n"
 		 perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory ${PWD}/Kernel/Config/Files/
+		 
+elif [[ $FrameworkRoot == "/opt/otrs7"* ]]
+	then cd /opt/Fred/
+		 git checkout master
+		 cd $FrameworkRoot
+
+ 		 echo -e "${yellow}\\n"
+		 echo "${yellow}Rebuilding config:"
+		 echo "${yellow}======================================================================="
+		 echo -e "\n"
+		 perl bin/otrs.Console.pl Maint::Config::Rebuild --cleanup
+
+		 echo -e "\n"
+		 perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory ${PWD}/Kernel/Config/Files/
 fi
 
 if [[ $OTRS4 == "0" ]]

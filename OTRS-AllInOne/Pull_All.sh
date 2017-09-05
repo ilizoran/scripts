@@ -2,7 +2,7 @@
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-OTRSArray=( otrs4-m otrs4-p otrs5-m otrs5-p otrs6-m otrs6-p )
+OTRSArray=( otrs4-m otrs4-p otrs5-m otrs5-p otrs6-m otrs6-p otrs7-m otrs7-p )
 
 for OTRS in "${OTRSArray[@]}"
 do

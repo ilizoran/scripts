@@ -24,6 +24,9 @@ elif [[ $OTRS == *"otrs5"* ]]
 		 FrameworkVersion="rel-5_0"
 elif [[ $OTRS == *"otrs6"* ]]
 	then OTRSName="OTRS 6"
+		 FrameworkVersion="rel-6_0"
+elif [[ $OTRS == *"otrs7"* ]]
+	then OTRSName="OTRS 7"
 		 FrameworkVersion="master"
 fi
 
@@ -43,6 +46,7 @@ if [[ ! -d $FrameworkRoot ]]
 		 sudo git clean -d -f -f
 		 echo -e "\n"
 		 git checkout $FrameworkVersion
+		 git pull
 		 sudo rm $FrameworkRoot/Kernel/Config.pm
 		 echo -e "\n${yellow}======================================================================="
 
