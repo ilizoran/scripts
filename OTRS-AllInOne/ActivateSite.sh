@@ -48,6 +48,11 @@ if [[ $Active == *"otrs4"* ]]
 		 sudo git clean -d -f -f
 		 git checkout rel-4_0 
 		 cd /opt/$Active
+elif [[ $Active == *"otrs3"* ]]
+	then cd /opt/Fred/
+		 sudo git clean -d -f -f
+		 git checkout rel-3_1 
+		 cd /opt/$Active
 else 
 	cd /opt/Fred/
 	sudo git clean -d -f -f

@@ -15,7 +15,11 @@ fi
 FrameworkRoot="/opt/$OTRS"
 FredVersion="master"
 
-if [[ $OTRS == *"otrs4"* ]]
+if [[ $OTRS == *"otrs3"* ]]
+	then OTRSName="OTRS 3"
+		 FrameworkVersion="rel-3_3"
+		 FredVersion="rel-3_1"
+elif [[ $OTRS == *"otrs4"* ]]
 	then OTRSName="OTRS 4"
 		 FrameworkVersion="rel-4_0"
 		 FredVersion="rel-4_0"
