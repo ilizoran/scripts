@@ -229,22 +229,29 @@ EOD
 
     # Collections of modules to be used by Files::Link, Files::Unlink, Module::Install, Module::UnInstall.
     ModuleCollection => {
-        itsm5 => [
-            '/opt/GeneralCatalog-5_0',
-            '/opt/ITSMCore-5_0',
-            '/opt/ITSMIncidentProblemManagement-5_0',
-            '/opt/ITSMConfigurationManagement-5_0',
-            '/opt/ITSMChangeManagement-5_0',
-            '/opt/ITSMServiceLevelManagement-5_0',
-            '/opt/ImportExport-5_0',
+        ITSM => [
+            '/opt/GeneralCatalog',
+            '/opt/ITSMCore',
+            '/opt/ITSMIncidentProblemManagement',
+            '/opt/ITSMConfigurationManagement',
+            '/opt/ITSMChangeManagement',
+            '/opt/ITSMServiceLevelManagement',
+            '/opt/ImportExport',
         ],
-        public5 => [
-            '/opt/FAQ-5_0',
-            '/opt/OTRSAppointmentCalendar-5_0',
-            '/opt/OTRSMasterSlave-5_0',
-            '/opt/Survey-5_0',
-            '/opt/SystemMonitoring-5_0',
-            '/opt/TimeAccounting-5_0',
+        Public => [
+            '/opt/FAQ',
+            '/opt/OTRSAppointmentCalendar',
+            '/opt/OTRSMasterSlave',
+            '/opt/Survey',
+            '/opt/SystemMonitoring',
+            '/opt/TimeAccounting',
+        ],
+        CI => [
+            '/opt/GitInterface',
+            '/opt/PackageCompatibility',
+            '/opt/OTRSCodeHub',
+            '/opt/OPMS',
+            '/opt/OTRSContinuousIntegrationMaster',
         ],
     },
 };
