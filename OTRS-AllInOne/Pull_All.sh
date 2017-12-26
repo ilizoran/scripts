@@ -12,5 +12,8 @@ do
 			 git pull
 			 echo -e "${green}Directory $OTRS is up to date"
 			 echo -e "${reset}"
+			 git rp
+			 echo -e "${green}Pruned origin $OTRS"
+			 echo -e "${reset}"
 	fi
 done
