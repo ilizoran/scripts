@@ -47,8 +47,8 @@ elif [[ $FrameworkRoot == "/opt/otrs6"* ]]
 		 echo -e "\n"
 		 perl bin/otrs.Console.pl Maint::Config::Rebuild --cleanup
 
-		 echo -e "\n"
-		 perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory ${PWD}/Kernel/Config/Files/
+		 # echo -e "\n"
+		 # perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory ${PWD}/Kernel/Config/Files/
 		 
 elif [[ $FrameworkRoot == "/opt/otrs7"* ]]
 	then cd /opt/Fred/
@@ -61,8 +61,8 @@ elif [[ $FrameworkRoot == "/opt/otrs7"* ]]
 		 echo -e "\n"
 		 perl bin/otrs.Console.pl Maint::Config::Rebuild --cleanup
 
-		 echo -e "\n"
-		 perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory ${PWD}/Kernel/Config/Files/
+		 # echo -e "\n"
+		 # perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory ${PWD}/Kernel/Config/Files/
 fi
 
 if [[ $OTRS4 == "0" ]]
@@ -90,6 +90,3 @@ sudo service apache2 restart
 
 echo -e "\\n${yellow}======================================================================="
 echo -e "${reset}\\n"
-
-
-
