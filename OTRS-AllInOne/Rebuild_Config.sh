@@ -84,9 +84,14 @@ else
 fi
 
 # Restart apache.
-echo -e "\\n${yellow}Restart apache:"
-echo -e "${green}"
-sudo service apache2 restart
+if [[ $FrameworkRoot != "/opt/otrs7-mojo"* ]]
+	then echo -e "\\n${yellow}Restart apache:"
+	echo -e "${green}"
+	sudo service apache2 restart
 
-echo -e "\\n${yellow}======================================================================="
-echo -e "${reset}\\n"
+	echo -e "\\n${yellow}======================================================================="
+	echo -e "${reset}\\n"
+
+fi
+
+
