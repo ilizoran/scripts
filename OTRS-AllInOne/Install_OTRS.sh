@@ -5,6 +5,7 @@ reset=`tput sgr0`
 
 OTRS=$1
 DBType=$2
+Internal=$3
 
 # If DBType param is not available use Mysql as default.
 if [[ ! $DBType ]]
@@ -14,6 +15,7 @@ fi
 # Define needed script variables.
 FrameworkRoot="/opt/$OTRS"
 FredVersion="master"
+Branch=$(git rev-parse --abbrev-ref HEAD)
 
 if [[ $OTRS == *"otrs3"* ]]
 	then OTRSName="OTRS 3"
@@ -31,7 +33,10 @@ elif [[ $OTRS == *"otrs6"* ]]
 		 FrameworkVersion="rel-6_0"
 elif [[ $OTRS == *"otrs7"* ]]
 	then OTRSName="OTRS 7"
-		 FrameworkVersion="master"
+	 	FrameworkVersion="master"
+	if [[ $Internal ]]
+		then FrameworkVersion="master-internal"
+	fi
 fi
 
 # If this is first installation of OTRS for this version with this script copy content from the original folder.
@@ -67,7 +72,11 @@ if [[ ! -d $FrameworkRoot ]]
 fi
 
 # Copy custom configuration.
-sudo cp -a /opt/scripts/OTRS-AllInOne/config.pl /opt/module-tools/etc/config.pl
+if [[ "$Branch" == "master-internal" ]]; 
+	then sudo cp -a /opt/scripts/OTRS-AllInOne/Mojolicious/config.pl /opt/module-tools/etc/config.pl
+else 
+	sudo cp -a /opt/scripts/OTRS-AllInOne/config.pl /opt/module-tools/etc/config.pl
+fi
 
 # Select appropriate Fred version.
 echo -e "\\n"
@@ -90,16 +99,27 @@ sudo -u s7otrs /opt/module-tools/bin/otrs.ModuleTools.pl TestSystem::Instance::S
 
 echo -e "\\n${yellow}======================================================================="
 
-# Disable OTRS site and enable it again.
-echo -e "${yellow}Enable OTRS $OTRS site"
-echo -e "======================================================================="
-echo -e "${green}"
+if [[ "$Branch" == "master-internal" ]]; 
+	then
+	
+	# Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf
+	echo -e "${yellow}Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf"
+	echo -e "======================================================================="
+	sudo cp -a /opt/$OTRS/Kernel/WebApp.conf.dist /opt/$OTRS/Kernel/WebApp.conf
+	echo -e "${green}Done.\\n"
+else
 
-SitePath="/etc/apache2/other/$OTRS.conf"
-sudo cp $SitePath /etc/apache2/sites-available/
-sudo a2ensite $OTRS
+	# Disable OTRS site and enable it again.
+	echo -e "${yellow}Enable OTRS $OTRS site"
+	echo -e "======================================================================="
+	echo -e "${green}"
 
-echo -e "\\n${yellow}======================================================================="
+	SitePath="/etc/apache2/other/$OTRS.conf"
+	sudo cp $SitePath /etc/apache2/sites-available/
+	sudo a2ensite $OTRS
 
-# Enable ModPerl for this site.
-perl /opt/scripts/OTRS-AllInOne/ActivateSite.sh $OTRS
+	echo -e "\\n${yellow}======================================================================="
+
+	# Enable ModPerl for this site.
+	perl /opt/scripts/OTRS-AllInOne/ActivateSite.sh $OTRS
+fi

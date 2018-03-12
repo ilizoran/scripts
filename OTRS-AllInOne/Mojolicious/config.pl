@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # --
-# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2018 OTRS AG, http://otrs.com/
 # --
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU AFFERO General Public License as published by
@@ -47,10 +47,10 @@ my $Config = {
         # Password for your Oracle user.
         DatabasePasswordOracle => '',
 
-        PermissionsOTRSUser   => 's7otrs',    # OTRS user
-        PermissionsOTRSGroup  => 'www-data',    # OTRS group
-        PermissionsWebUser    => 's7otrs',    # otrs-web user
-        PermissionsWebGroup   => 'www-data',    # otrs-web group
+        PermissionsOTRSUser   => 's7otrs',                                  # OTRS user
+        PermissionsOTRSGroup  => 'www-data',                                # OTRS group
+        PermissionsWebUser    => 's7otrs',                                  # otrs-web user
+        PermissionsWebGroup   => 'www-data',                                # otrs-web group
         PermissionsAdminGroup => ( $^O =~ /darwin/i ? 'wheel' : 'root' ),
 
         # the apache config of the system you're going to install will be copied to this location
@@ -73,6 +73,7 @@ my $Config = {
     \$Self->{'LogModule'}           = 'Kernel::System::Log::File';
     \$Self->{'LogModule::LogFile'}  = '$Config{EnvironmentRoot}$SystemName/var/log/otrs.log';
     \$Self->{'FQDN'}                = 'localhost';
+    \$Self->{'TestHTTPHostname'}    = 'localhost:3000';
     \$Self->{'DefaultLanguage'}     = 'en';
     \$Self->{'DefaultCharset'}      = 'utf-8';
     \$Self->{'AdminEmail'}          = 'root\@localhost';
@@ -90,6 +91,7 @@ my $Config = {
     \$Self->{'Fred::SystemName'}      = '$SystemName';
     \$Self->{'Fred::ConsoleOpacity'}  = '0.7';
     \$Self->{'Fred::ConsoleWidth'}    = '30%';
+    \$Self->{'Fred::Active'}          = 0;
 
     # Misc
     \$Self->{'Loader::Enabled::CSS'}  = 0;
@@ -97,31 +99,31 @@ my $Config = {
 
     # Selenium
     # For testing with Firefox until v. 47 (testing with recent FF and marionette is currently not supported):
-    \$Self->{'SeleniumTestsConfig'} = {
-         remote_server_addr  => 'localhost',
-         port                => '4444',
-         platform            => 'ANY',
-         browser_name        => 'firefox',
-         extra_capabilities => {
-             marionette     => \0,     # Required to run FF 47 or older on Selenium 3+.
-        },
-    };
-
-    # For testing with Chrome/Chromium (requires installed geckodriver):
     # \$Self->{'SeleniumTestsConfig'} = {
     #     remote_server_addr  => 'localhost',
     #     port                => '4444',
     #     platform            => 'ANY',
-    #     browser_name        => 'chrome',
+    #     browser_name        => 'firefox',
     #     extra_capabilities => {
-    #         chromeOptions => {
-    #             args => ["no-sandbox", "disable-infobars"],
-    #         },
-    #     },
+    #        marionette     => \0,     # Required to run FF 47 or older on Selenium 3+.
+    #    },
     # };
 
+    # For testing with Chrome/Chromium (requires installed geckodriver):
+    \$Self->{'SeleniumTestsConfig'} = {
+        remote_server_addr  => 'localhost',
+        port                => '4444',
+        platform            => 'ANY',
+        browser_name        => 'chrome',
+        extra_capabilities => {
+            chromeOptions => {
+                args => ["no-sandbox", "disable-infobars"],
+            },
+        },
+    };
+
 EOD
-,
+        ,
 
         # Agent data
         Agents => [
@@ -214,12 +216,15 @@ EOD
     # Settings used by Git::Directories::Update.
     DevelDir => {
         DevelDirectories => [
+
             #    '/path/to/your/devel/directory/',
         ],
         AdditionalDevelDirectories => [
+
             #    '/path/to/your/directory/with/all/git/repositories/',
         ],
         GitIgnore => [
+
             #    '/path/to/ignore/',
         ],
         CodePolicyRegisterCommand => '/opt/OTRSCodePolicy/scripts/install-git-hooks.pl',
