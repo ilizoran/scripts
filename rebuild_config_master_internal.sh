@@ -32,11 +32,6 @@ echo -e "\\n${yellow}Clean up log data:"
 echo -e "${green}"
 sudo perl ../scripts/otrs.CleanLog.pl
 
-# restart apache
-echo -e "\\n${yellow}Restart apache:"
-echo -e "${green}"
-sudo service apache2 restart
-
 echo -e "\\n${yellow}======================================================================="
 echo -e "${reset}\\n"
 
