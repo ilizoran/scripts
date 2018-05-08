@@ -149,28 +149,16 @@ my $ConfigInjectStr = <<"EOD";
     \$Self->{'SendmailModule::Host'} =  'mail.s7designcreative.com';
     \$Self->{'SendmailModule'} =  'Kernel::System::Email::DoNotSendEmail';
 
-    # phantomjs SeleniumTestsConfig
-    # \$Self->{'SeleniumTestsConfig'} = {
-    #     remote_server_addr  => 'localhost',
-    #     port                => '8910',
-    #     browser_name        => 'phantomjs',
-    #     platform            => 'ANY',
-    # };
-
-    # phantomjs SeleniumTestsConfig
-    # \$Self->{'SeleniumTestsConfig'} = {
-    #     remote_server_addr  => '10.0.1.8',
-    #     port                => '4444',
-    #     browser_name        => 'firefox',
-    #     platform            => 'ANY',
-    # };
-
-    # firefox SeleniumTestsConfig
     \$Self->{'SeleniumTestsConfig'} = {
         remote_server_addr  => 'localhost',
         port                => '4444',
-        browser_name        => 'firefox',
         platform            => 'ANY',
+        browser_name        => 'chrome',
+        extra_capabilities => {
+            chromeOptions => {
+                args => ["no-sandbox", "disable-infobars"],
+            },
+        },
     };
 
 EOD
