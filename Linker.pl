@@ -125,6 +125,7 @@ if ( $Opts{'l'} eq 'OTRSCodePolicy' ) {
 if ( $Opts{'l'} eq 'All' ) {
     @Modules = (
         'FAQ',
+        'ITSM',
         'GeneralCatalog',
         'ITSMChangeManagement',
         'ITSMConfigurationManagement',
@@ -132,6 +133,10 @@ if ( $Opts{'l'} eq 'All' ) {
         'ITSMIncidentProblemManagement',
         'ITSMServiceLevelManagement',
         'ImportExport',
+
+        # 'PackageCompatibility',
+        # 'OTRSSTORM',
+        
         'OTRSBusiness',
         'OTRSBusinessSeleniumTesting',
         'OTRSCodePolicy',
