@@ -15,6 +15,10 @@ fi
 FrameworkRoot="/opt/$OTRS"
 FredVersion="master"
 
+cd ../module-tools/
+git checkout master
+cd /opt/$OTRS
+
 if [[ $OTRS == *"otrs7"* ]]
 	then OTRSName="OTRS 7 Mojolicious"
 		 FrameworkVersion="master-internal"
@@ -55,24 +59,13 @@ fi
 # Copy custom configuration.
 sudo cp -a /opt/scripts/OTRS-AllInOne/Mojolicious/config.pl /opt/module-tools/etc/config.pl
 
-# Select appropriate Fred version.
-echo -e "\\n"
-echo -e "${yellow}Checkout Fred to correct branch"
-echo -e "======================================================================="
-echo -e "${green}"
-
-cd /opt/Fred/
-sudo git clean -d -f -f
-git checkout $FredVersion
-cd $FrameworkRoot
-
 # Install OTRS.
 echo -e "\\n"
 echo -e "${yellow}Installing $OTRSName $DBType"
 echo -e "======================================================================="
 echo -e "${green}"
 
-sudo -u s7otrs /opt/module-tools/bin/otrs.ModuleTools.pl TestSystem::Instance::Setup --framework-directory $FrameworkRoot --fred-directory /opt/Fred --database-type $DBType
+sudo -u s7otrs /opt/module-tools/bin/otrs.ModuleTools.pl TestSystem::Instance::Setup --framework-directory $FrameworkRoot --database-type $DBType
 
 echo -e "\\n${yellow}======================================================================="
 
