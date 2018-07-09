@@ -257,6 +257,7 @@ alias rc='../scripts/rebuild_config.sh'
 alias modunins='perl ../module-tools/module-linker.pl uninstall'
 alias modins='perl ../module-tools/module-linker.pl install'
 alias ut='perl bin/otrs.Console.pl Dev::UnitTest::Run --test'
+alias ut4='perl bin/otrs.UnitTest.pl -n'
 alias ud='perl bin/otrs.Console.pl Dev::UnitTest::Run --directory'
 alias p='phantomjs --wd'
 alias rest='sudo perl scripts/restore.pl -b /opt/backup_basic/ -d /opt/otrs/'
@@ -266,12 +267,23 @@ alias ss='mc /tmp'
 alias cl='perl bin/otrs.Console.pl Maint::Session::DeleteAll'
 alias c='mc /opt/otrs/var/tmp'
 alias ols='perl bin/otrs.Console.pl List'
-alias sd='java -jar ../scripts/selenium-server-standalone-2.53.0.jar'
+alias sd='java -Dwebdriver.chrome.driver=../scripts/chromedriver -jar ../scripts/selenium-server-standalone.ja'
+alias sdc='java -Dwebdriver.chrome.driver=../scripts/chromedriver -jar ../scripts/selenium-server-standalone.jar'
 alias r='../scripts/reset_system.sh'
 alias gt='perl bin/otrs.Console.pl Dev::Tools::Database::RandomDataInsert --generate-tickets 20 --articles-per-ticket 2 --generate-users 2 --generate-customer-users 2  --generate-queues 2 --mark-tickets-as-seen'
 
 # install systems
+#alias otrs='perl /opt/scripts/OTRS-AllInOne/Install_OTRS.sh'
+#alias otrsAll='perl /opt/scripts/OTRS-AllInOne/Install_All_OTRS.sh'
+alias otrsMojo='perl /opt/scripts/OTRS-AllInOne/Mojolicious/Install_OTRS_Mojolicious.sh'
+#alias site='perl /opt/scripts/OTRS-AllInOne/ActivateSite.sh'
+#alias ipack='perl /opt/module-tools/bin/otrs.ModuleTools.pl Module::Package::Install'
+#alias upack='perl /opt/module-tools/bin/otrs.ModuleTools.pl Module::Package::Uninstall'
+#alias pullall='perl /opt/scripts/OTRS-AllInOne/Pull_All.sh'
+#alias rc='perl /opt/scripts/OTRS-AllInOne/Rebuild_Config.sh'
+
 alias otrs='../scripts/install_OTRS.sh'
+alias otrs4='../scripts/install_OTRS4.sh'
 alias otrsPG='../scripts/install_OTRS_PG.sh'
 alias otrsPGAll='../scripts/install_OTRS_PG_ALL.sh'
 alias otrsVanila='../scripts/install_OTRS_Vanila.sh'
@@ -284,6 +296,19 @@ alias up='../scripts/otrs_customer_portal_uninstall.sh'
 
 alias fetch='perl bin/otrs.Console.pl Maint::PostMaster::Read < '
 
+alias cm='cd /opt/OTRSContinuousIntegrationMaster'
+alias b='cd /opt/OTRSBusiness'
+alias rename='perl scripts/rename_folders.sh'
+alias orc='bin/otrs.Console.pl Maint::Config::Rebuild --cleanup'
+
+alias ..='cd ../'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+alias confmig='perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory /opt/otrs/Kernel/Config/Files/'
+
+alias mojo='bin/otrs.Console.pl Dev::Tools::WebServer'
 
 PERL_MB_OPT="--install_base \"/home/s7otrs/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/s7otrs/perl5"; export PERL_MM_OPT;
