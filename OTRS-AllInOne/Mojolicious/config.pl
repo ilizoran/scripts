@@ -63,6 +63,12 @@ my $Config = {
         #  following variables: $SystemName, %Config.
         ConfigInject => <<'EOD'
 
+    #\$Self->{TestDatabase} = {
+    #    DatabaseDSN  => 'DBI:mysql:database=otrs_test;host=127.0.0.1;',
+    #    DatabaseUser => 'otrs_test',
+    #    DatabasePw   => 'otrs_test',
+    #};
+
     \$Self->{'SecureMode'} = 1;
     \$Self->{'SystemID'}            = '54';
     \$Self->{'SessionName'}         = '$SystemName';
@@ -121,6 +127,8 @@ my $Config = {
             },
         },
     };
+
+    delete \$Self->{'Frontend::NotifyModule'}->{'1100-SystemContract'};
 
 EOD
         ,
