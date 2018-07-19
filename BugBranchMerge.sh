@@ -15,6 +15,8 @@ FrameworkBranch=$(git rev-parse --abbrev-ref HEAD)
 
 git checkout $BugBranch
 
+git pull origin $BugBranch
+
 git merge $FrameworkBranch --commit -m "Merged $FrameworkBranch into bug fix branch $BugBranch"
 
 git checkout $FrameworkBranch
