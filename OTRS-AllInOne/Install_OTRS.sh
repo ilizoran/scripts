@@ -35,7 +35,7 @@ elif [[ $OTRS == *"otrs7"* ]]
 	then OTRSName="OTRS 7"
 	 	FrameworkVersion="master"
 	if [[ $Internal ]]
-		then FrameworkVersion="master-internal"
+		then FrameworkVersion="master"
 	fi
 fi
 
@@ -44,7 +44,7 @@ if [[ ! -d $FrameworkRoot ]]
 	then echo -e "\n${yellow}Preparing $OTRSName $DBType"
 		 echo -e "${yellow}======================================================================="
 		 echo -e "${green}"
-		 echo -e "Copying OTRS original content to $OTRSName new folder please wait..." 
+		 echo -e "Copying OTRS original content to $OTRSName new folder please wait..."
 
 		 sudo cp -a /opt/otrs/. $FrameworkRoot
 		 echo -e "Done"
@@ -72,9 +72,9 @@ if [[ ! -d $FrameworkRoot ]]
 fi
 
 # Copy custom configuration.
-if [[ "$Branch" == "master-internal" ]]; 
+if [[ "$Branch" == "master" ]]; 
 	then sudo cp -a /opt/scripts/OTRS-AllInOne/Mojolicious/config.pl /opt/module-tools/etc/config.pl
-else 
+else
 	sudo cp -a /opt/scripts/OTRS-AllInOne/config.pl /opt/module-tools/etc/config.pl
 fi
 
@@ -99,9 +99,9 @@ sudo -u s7otrs /opt/module-tools/bin/otrs.ModuleTools.pl TestSystem::Instance::S
 
 echo -e "\\n${yellow}======================================================================="
 
-if [[ "$Branch" == "master-internal" ]]; 
+if [[ "$Branch" == "master" ]]; 
 	then
-	
+
 	# Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf
 	echo -e "${yellow}Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf"
 	echo -e "======================================================================="
