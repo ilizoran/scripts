@@ -53,7 +53,7 @@ else
 fi
 
 # Restart apache.
-if [[ $Branch != *"master-internal"* ]]
+if [[ $Branch != *"master"* ]]
 	then echo -e "\\n${yellow}Restart apache:"
 	echo -e "${green}"
 	sudo service apache2 restart

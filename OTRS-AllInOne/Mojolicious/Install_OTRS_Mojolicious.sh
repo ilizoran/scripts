@@ -21,7 +21,7 @@ cd /opt/$OTRS
 
 if [[ $OTRS == *"otrs7"* ]]
 	then OTRSName="OTRS 7 Mojolicious"
-		 FrameworkVersion="master-internal"
+		 FrameworkVersion="master"
 fi
 
 # If this is first installation of OTRS for this version with this script copy content from the original folder.
