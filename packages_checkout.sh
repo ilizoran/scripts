@@ -31,32 +31,26 @@ NUMS=(
         OTRSBusiness
         OTRSBusinessSeleniumTesting
 
-        OTRSPortal
-        SaaSCockpit
-        SaaSSOAP
+        # OTRSPortal
+        # SaaSCockpit
+        # SaaSSOAP
 
-        Campain
-        Contract-Management
-        Finance
-        OTRSAdditionalCalendars
-        OTRSCICustomSearch
-        OTRSDownloadStatsServer
-        OTRSRestorePendingInformation
-        OTRSStatsOTRSGroup
-        OTRSDynamicFieldAttachment
-        OTRSCustomerPortal
-        OTRSCodePolicy
-        otrsescalationsuspend
-        OTRSTicketMaskExtensions
-        OTRSHideShowDynamicFields
-        OTRSSchedulerFAQTicketCreate
-        OTRSTicketWorkflow
-        GitInterface
-        PackageCompatibility
-        OTRSCodeHub
-        OPMS
-        OTRSContinuousIntegrationMaster
-        OTRSDynamicFieldAttachment
+        # Campain
+        # Contract-Management
+        # Finance
+        # OTRSAdditionalCalendars
+        # OTRSCICustomSearch
+        # OTRSDownloadStatsServer
+        # OTRSRestorePendingInformation
+        # OTRSDynamicFieldAttachment
+        # OTRSCodePolicy
+        # OTRSEscalationSuspend
+        # OTRSTicketMaskExtensions
+        # OTRSHideShowDynamicFields
+        # OTRSSchedulerFAQTicketCreate
+        # OTRSDynamicFieldAttachment
+        # OTRSAdvancedEditor
+        # OTRSDataCompress
         )
 
 for NUM in "${NUMS[@]}"
