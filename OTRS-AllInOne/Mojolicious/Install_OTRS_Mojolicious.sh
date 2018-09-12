@@ -12,7 +12,7 @@ if [[ ! $DBType ]]
 	then DBType="Mysql"
 fi
 
-if [[ $Module == "Postgresql"|| $Module == "Mysql" ]]
+if [[ $Module == "Postgresql" || $Module == "Mysql" || $Module == "" ]]
 	then 
 		Module="No"
 fi
@@ -175,7 +175,6 @@ if [[ $Module != "No" ]]
 			for Group in "${AllGroups[@]}"
 			do
 				Group="$(sed 's/^[[:space:]]//' <<< $Group)"
-			  echo "$Group"
 			    perl /opt/$OTRS/bin/otrs.Console.pl Admin::Group::UserLink --user-name $User --group-name $Group --permission rw --quiet
 			done
 		done
