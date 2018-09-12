@@ -12,29 +12,30 @@ if [[ ! $DBType ]]
 	then DBType="Mysql"
 fi
 
-if [[ ! $Module ]]
-	then Module="No"
+if [[ $Module == "Postgresql"|| $Module == "Mysql" ]]
+	then 
+		Module="No"
 fi
 
-if [[ $OTRS == "otrs" ]]
-then
-	if [[ $DBType == "Postgresql" ]]
-		then /opt/scripts/DropTableOTRS_PG.sh
-	else
-		/opt/scripts/DropTableOTRS.sh
+# if [[ $OTRS == "otrs" ]]
+# then
+# 	if [[ $DBType == "Postgresql" ]]
+# 		then /opt/scripts/DropTableOTRS_PG.sh
+# 	else
+# 		/opt/scripts/DropTableOTRS.sh
 		
-		 # Grant Mysql DB privileges to the 'otrs' user to be able to create other necessary users.
-		 if [[ $DBType == "Mysql" ]]
-			then echo -e "\n${yellow}Give 'otrs' user all privileges for MySQL DB"
-		 	 	 echo -e "${yellow}======================================================================="
+# 		 # Grant Mysql DB privileges to the 'otrs' user to be able to create other necessary users.
+# 		 if [[ $DBType == "Mysql" ]]
+# 			then echo -e "\n${yellow}Give 'otrs' user all privileges for MySQL DB"
+# 		 	 	 echo -e "${yellow}======================================================================="
 
-			     sudo echo "GRANT ALL ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
-			 	 sudo echo "GRANT GRANT OPTION ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+# 			     sudo echo "GRANT ALL ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+# 			 	 sudo echo "GRANT GRANT OPTION ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
 
-				 echo -e "${green}Done"
-		 fi
-	fi
-fi
+# 				 echo -e "${green}Done"
+# 		 fi
+# 	fi
+# fi
 
 # Define needed script variables.
 FrameworkRoot="/opt/$OTRS"
@@ -138,31 +139,48 @@ else
 fi
 
 # Adding users to all groups.
-if [[ $DBType == "Mysql" && $Module != "No" ]]
-	then 
+if [[ $Module != "No" ]]
+	then
 		echo -e "${yellow}Adding users to all groups..."
 		echo -e "======================================================================="
 		echo -e "${green}"
 		OTRSDB="$(sed s/-/_/g <<< $OTRS)"
 
-		# Get all users from the DB.
-		UsersString=$(mysql $OTRSDB -uroot -proot -e "SELECT login FROM users ORDER BY login")
-		IFS=$'\n' AllUsers=($(grep -oP '^(\w|-|@)*$' <<< "$UsersString"))
-		AllUsers=("${AllUsers[@]:1}")
+		if [[ $DBType == "Mysql" ]]
+			then 
+				# Get all users from the DB.
+				UsersString=$(mysql $OTRSDB -uroot -proot -e "SELECT login FROM users ORDER BY login")
+				IFS=$'\n' AllUsers=($(grep -oP '^(\w|-|@)*$' <<< "$UsersString"))
+				AllUsers=("${AllUsers[@]:1}")
 
-		# Get all groups from the DB.
-		GroupsString=$(mysql $OTRSDB -uroot -proot -e "SELECT name FROM groups ORDER BY name")
-		IFS=$'\n' AllGroups=($(grep -oP '^(\w|-)*$' <<< "$GroupsString"))
-		AllGroups=("${AllGroups[@]:1}") 
+				# Get all groups from the DB.
+				GroupsString=$(mysql $OTRSDB -uroot -proot -e "SELECT name FROM groups ORDER BY name")
+				IFS=$'\n' AllGroups=($(grep -oP '^(\w|-)*$' <<< "$GroupsString"))
+				AllGroups=("${AllGroups[@]:1}") 
+		else
+
+				# Get all users from the DB.
+				UsersString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT login FROM users ORDER BY login")	
+				IFS=$'\n' AllUsers=($(grep -oP '^\s(\w|-|@)*$' <<< "$UsersString"))
+
+				# Get all groups from the DB.
+				GroupsString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT name FROM groups ORDER BY name")
+				IFS=$'\n' AllGroups=($(grep -oP '^\s(\w|-)*$' <<< "$GroupsString"))
+		fi
 
 		# Add each user to each group with rw access.
 		for User in "${AllUsers[@]}"
 		do
+			User="$(sed 's/^[[:space:]]//' <<< $User)"
 			for Group in "${AllGroups[@]}"
 			do
+				Group="$(sed 's/^[[:space:]]//' <<< $Group)"
+			  echo "$Group"
 			    perl /opt/$OTRS/bin/otrs.Console.pl Admin::Group::UserLink --user-name $User --group-name $Group --permission rw --quiet
 			done
 		done
 		echo -e "${green}Done.\\n"
-fi		
+fi	  
+
+	
 
