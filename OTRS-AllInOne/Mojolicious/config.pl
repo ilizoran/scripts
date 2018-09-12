@@ -79,7 +79,6 @@ my $Config = {
     \$Self->{'LogModule'}           = 'Kernel::System::Log::File';
     \$Self->{'LogModule::LogFile'}  = '$Config{EnvironmentRoot}$SystemName/var/log/otrs.log';
     \$Self->{'FQDN'}                = 'localhost';
-    \$Self->{'TestHTTPHostname'}    = 'localhost:3001';
     \$Self->{'DefaultLanguage'}     = 'en';
     \$Self->{'DefaultCharset'}      = 'utf-8';
     \$Self->{'AdminEmail'}          = 'root\@localhost';
@@ -93,11 +92,11 @@ my $Config = {
     \$Self->{'SendmailModule'}               =  'Kernel::System::Email::DoNotSendEmail';
 
     # Fred
-    \$Self->{'Fred::BackgroundColor'} = '#006ea5';
-    \$Self->{'Fred::SystemName'}      = '$SystemName';
-    \$Self->{'Fred::ConsoleOpacity'}  = '0.7';
-    \$Self->{'Fred::ConsoleWidth'}    = '30%';
-    \$Self->{'Fred::Active'}          = 0;
+    #\$Self->{'Fred::BackgroundColor'} = '#006ea5';
+    #\$Self->{'Fred::SystemName'}      = '$SystemName';
+    #\$Self->{'Fred::ConsoleOpacity'}  = '0.7';
+    #\$Self->{'Fred::ConsoleWidth'}    = '30%';
+    #\$Self->{'Fred::Active'}          = 1;
 
     # Misc
     \$Self->{'Loader::Enabled::CSS'}  = 0;
@@ -111,8 +110,8 @@ my $Config = {
     #     platform            => 'ANY',
     #     browser_name        => 'firefox',
     #     extra_capabilities => {
-    #        marionette     => \0,     # Required to run FF 47 or older on Selenium 3+.
-    #    },
+    #         marionette     => \0,     # Required to run FF 47 or older on Selenium 3+.
+    #     },
     # };
 
     # For testing with Chrome/Chromium (requires installed geckodriver):
@@ -128,8 +127,6 @@ my $Config = {
         },
     };
 
-    delete \$Self->{'Frontend::NotifyModule'}->{'1100-SystemContract'};
-
 EOD
         ,
 
@@ -141,6 +138,16 @@ EOD
                 UserLogin     => 'zilibasic',
                 UserPw        => 'zilibasic',
                 UserEmail     => 'zilibasic@s7designcreative.com',
+                UserPreferences => [
+                    {
+                        Key   => 'UserTimeZone',
+                        Value => 'Europe/Berlin',
+                    },
+                    {
+                        Key   => 'UserLanguage',
+                        Value => 'en',
+                    },
+                ],
             },
             {
                 UserFirstname => 'Sanjin',
@@ -148,6 +155,16 @@ EOD
                 UserLogin     => 'svik',
                 UserPw        => 'svik',
                 UserEmail     => 'svik@s7designcreative.com',
+                UserPreferences => [
+                    {
+                        Key   => 'UserTimeZone',
+                        Value => 'Europe/Berlin',
+                    },
+                    {
+                        Key   => 'UserLanguage',
+                        Value => 'en',
+                    },
+                ],
             },
             {
                 UserFirstname => 'Milan',
@@ -155,6 +172,30 @@ EOD
                 UserLogin     => 'mrakic',
                 UserPw        => 'mrakic',
                 UserEmail     => 'mrakic@s7designcreative.com',
+                UserPreferences => [
+                    {
+                        Key   => 'UserTimeZone',
+                        Value => 'Europe/Berlin',
+                    },
+                    {
+                        Key   => 'UserLanguage',
+                        Value => 'en',
+                    },
+                ],
+            },
+        ],
+
+        # Customer Companies data
+        CustomerCompanies => [
+            {
+                CustomerID              => 'FirstCID',
+                CustomerCompanyName     => 'Customer Company Name',
+                CustomerCompanyStreet   => 'Customer streat1',
+                CustomerCompanyZIP      => '12345',
+                CustomerCompanyCity     => 'Company City',
+                CustomerCompanyCountry  => 'Company country',
+                CustomerCompanyURL      => 'www.google.com',
+                CustomerCompanyComment  => 'customer-company-1',
             },
         ],
 
@@ -219,6 +260,122 @@ EOD
                 ServiceNames => [ 'Service 2', 'Service 1' ],
             },
         ],
+
+        # Dynamic Field data
+        DynamicFields => [
+            {
+                InternalField => 0,
+                Name        => 'Test1',
+                Label       => 'Test1',
+                FieldOrder  => 9999,
+                FieldType   => 'Text',
+                ObjectType  => 'Ticket',
+                Config      => {
+                    DefaultValue => '',
+                    Link         => '',
+                    LinkPreview  => '',
+                    RegExList    => [ ],
+                },
+            },
+            {
+                InternalField => 0,
+                Name        => 'Test2',
+                Label       => 'Test2',
+                FieldOrder  => 9999,
+                FieldType   => 'TextArea',
+                ObjectType  => 'Ticket',
+                Config      => {
+                    Cols         => '',
+                    DefaultValue => '',
+                    RegExList    => [ ],
+                    Rows         => '',
+                },
+            },
+            {
+                InternalField => 0,
+                Name        => 'Test3',
+                Label       => 'Test3',
+                FieldOrder  => 9999,
+                FieldType   => 'Checkbox',
+                ObjectType  => 'Ticket',
+                Config      => {
+                    DefaultValue => '0',
+                },
+            },
+            {
+                InternalField => 0,
+                Name        => 'Test4',
+                Label       => 'Test4',
+                FieldOrder  => 9999,
+                FieldType   => 'Dropdown',
+                ObjectType  => 'Ticket',
+                Config      => {
+                    DefaultValue   => '',
+                    Link           => '',
+                    LinkPreview    => '',
+                    PossibleNone   => '0',
+                    PossibleValues => {
+                      A => '1',
+                      B => '2',
+                      C => '3',
+                    },
+                    TranslatableValues => '0',
+                    TreeView           => '0',
+                },
+            },
+            {
+                InternalField => 0,
+                Name        => 'Test5',
+                Label       => 'Test5',
+                FieldOrder  => 9999,
+                FieldType   => 'Multiselect',
+                ObjectType  => 'Ticket',
+                Config      => {
+                    DefaultValue   => ['',],
+                    PossibleNone   => '0',
+                    PossibleValues => {
+                      A => '1',
+                      B => '2',
+                      C => '3',
+                    },
+                    TranslatableValues => '0',
+                    TreeView           => '0',
+                },
+            },            {
+                InternalField => 0,
+                Name        => 'Test6',
+                Label       => 'Test6',
+                FieldOrder  => 9999,
+                FieldType   => 'Date',
+                ObjectType  => 'Ticket',
+                Config      => {
+                    DateRestriction => '',
+                    DefaultValue    => 0,
+                    Link            => '',
+                    LinkPreview     => '',
+                    YearsInFuture   => '5',
+                    YearsInPast     => '5',
+                    YearsPeriod     => '0',
+                },
+            },
+            {
+                InternalField => 0,
+                Name        => 'Test7',
+                Label       => 'Test7',
+                FieldOrder  => 9999,
+                FieldType   => 'DateTime',
+                ObjectType  => 'Ticket',
+                Config      => {
+                    DateRestriction => '',
+                    DefaultValue    => 0,
+                    Link            => '',
+                    LinkPreview     => '',
+                    YearsInFuture   => '5',
+                    YearsInPast     => '5',
+                    YearsPeriod     => '0',
+                },
+            },
+        ],
     },
 
     # Settings used by Git::Directories::Update.
@@ -263,6 +420,83 @@ EOD
             '/opt/OTRSCodeHub',
             '/opt/OPMS',
             '/opt/OTRSContinuousIntegrationMaster',
+        ], 
+        Full5 => [
+            '/opt/FAQ',
+            '/opt/GeneralCatalog',
+            '/opt/ITSMCore',
+            '/opt/ITSMChangeManagement',
+            '/opt/ITSMConfigurationManagement',
+            '/opt/ITSMIncidentProblemManagement',
+            '/opt/ITSMServiceLevelManagement',
+            '/opt/ImportExport',
+            '/opt/OTRSAppointmentCalendar',
+            '/opt/ImportExport',
+            '/opt/OTRSBusiness',
+            '/opt/OTRSBusinessSeleniumTesting',
+            '/opt/OTRSCodePolicy',
+            '/opt/OTRSMasterSlave',
+            '/opt/OTRSMultipleRecipientEncryption',
+            '/opt/OTRSTicketNumberCounterDatabase',
+            '/opt/Survey',
+            '/opt/SystemMonitoring',
+            '/opt/TimeAccounting', 
+        ],       
+        Full6 => [
+            '/opt/FAQ',
+            '/opt/GeneralCatalog',
+            '/opt/ITSMCore',
+            '/opt/ITSMChangeManagement',
+            '/opt/ITSMConfigurationManagement',
+            '/opt/ImportExport',
+            '/opt/ITSMIncidentProblemManagement',
+            '/opt/ITSMServiceLevelManagement',
+            '/opt/ImportExport',
+            '/opt/OTRSBusiness',
+            '/opt/OTRSBusinessSeleniumTesting',
+            '/opt/OTRSCodePolicy',
+            '/opt/OTRSMasterSlave',
+            '/opt/Survey',
+            '/opt/SystemMonitoring',
+            '/opt/TimeAccounting', 
+        ],
+        Full7 => [
+            '/opt/GeneralCatalog',
+            '/opt/ITSMCore',
+            '/opt/ITSMChangeManagement',
+            '/opt/ITSMConfigurationManagement',
+            '/opt/ImportExport',
+            '/opt/ITSMIncidentProblemManagement',
+            '/opt/ITSMServiceLevelManagement',
+            '/opt/ImportExport',
+            '/opt/OTRSCodePolicy',
+        ],
+        Portal => [
+            '/opt/Campain',
+            '/opt/FAQ',
+            '/opt/Finance',
+            '/opt/GeneralCatalog',
+            '/opt/ITSMCore',
+            '/opt/ITSMChangeManagement',
+            '/opt/ITSMConfigurationManagement',
+            '/opt/ImportExport',
+            '/opt/OTRSAdditionalCalendars',
+            '/opt/OTRSAdvancedEditor',
+            '/opt/OTRSBusiness',
+            '/opt/OTRSBusinessSeleniumTesting',
+            '/opt/OTRSCICustomSearch',
+            '/opt/OTRSCodePolicy',
+            '/opt/OTRSDataCompress',
+            '/opt/OTRSDownloadStatsServer',
+            '/opt/OTRSDynamicFieldAttachment',
+            '/opt/OTRSMasterSlave',
+            '/opt/OTRSPortal',
+            '/opt/OTRSRestorePendingInformation',
+            '/opt/SaaSCockpit',
+            '/opt/SaaSSOAP',
+            '/opt/Survey',
+            '/opt/SystemMonitoring',
+            '/opt/TimeAccounting', 
         ],
     },
 };

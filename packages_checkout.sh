@@ -15,44 +15,37 @@ else
 	branch='master'
 fi
 
-NUMS=(  
- 		GeneralCatalog
-        ITSMCore
-        ITSMConfigurationManagement
-        ImportExport
-        # TimeAccounting
+NUMS=(        
+        Campain
+        FAQ
+        Finance
+        GeneralCatalog
         ITSMChangeManagement
+        ITSMConfigurationManagement
+        ITSMCore
+        ImportExport
         ITSMIncidentProblemManagement
         ITSMServiceLevelManagement
-        # FAQ
-        # OTRSMasterSlave
-        # Survey
-        # SystemMonitoring
-        # OTRSBusiness
-        # OTRSBusinessSeleniumTesting
-
-        # OTRSPortal
-        # SaaSCockpit
-        # SaaSSOAP
-
-        # Campain
-        # Contract-Management
-        # Finance
-        # OTRSAdditionalCalendars
-        # OTRSCICustomSearch
-        # OTRSDownloadStatsServer
-        # OTRSRestorePendingInformation
-
-        # OTRSDynamicFieldAttachment
-        # OTRSCodePolicy
-        # OTRSEscalationSuspend
-        # OTRSTicketMaskExtensions
-        # OTRSHideShowDynamicFields
-        # OTRSSchedulerFAQTicketCreate
-        # OTRSDynamicFieldAttachment
-        # OTRSAdvancedEditor
-        # OTRSDataCompress
-
+        OTRSAdditionalCalendars
+        OTRSAdvancedEditor
+        OTRSBusiness
+        OTRSBusinessSeleniumTesting
+        OTRSCICustomSearch
+        OTRSCodePolicy
+        OTRSDataCompress
+        OTRSDownloadStatsServer
+        OTRSDynamicFieldAttachment
+        OTRSMasterSlave
+        OTRSPortal
+        OTRSRestorePendingInformation
+        SaaSCockpit
+        SaaSSOAP
+        Survey
+        SystemMonitoring
+        TimeAccounting 
+        OTRSMultipleRecipientEncryption 
+        OTRSTicketNumberCounterDatabase 
+        OTRSAppointmentCalendar 
         )
 
 for NUM in "${NUMS[@]}"

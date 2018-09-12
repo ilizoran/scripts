@@ -4,16 +4,37 @@ green=`tput setaf 2`
 reset=`tput sgr0`
 
 OTRS=$1
-DBType=$2
+Module=$2
+DBType=$3
 
 # If DBType param is not available use Mysql as default.
 if [[ ! $DBType ]]
 	then DBType="Mysql"
 fi
 
+if [[ ! $Module ]]
+	then Module="No"
+fi
+
+if [[ $DBType == "Postgresql" ]]
+	then /opt/scripts/DropTableOTRS_PG.sh
+else
+	/opt/scripts/DropTableOTRS.sh
+	
+	 # Grant Mysql DB privileges to the 'otrs' user to be able to create other necessary users.
+	 if [[ $DBType == "Mysql" ]]
+		then echo -e "\n${yellow}Give 'otrs' user all privileges for MySQL DB"
+	 	 	 echo -e "${yellow}======================================================================="
+
+		     sudo echo "GRANT ALL ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+		 	 sudo echo "GRANT GRANT OPTION ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+
+			 echo -e "${green}Done"
+	 fi
+fi
+
 # Define needed script variables.
 FrameworkRoot="/opt/$OTRS"
-FredVersion="master"
 
 cd ../module-tools/
 git checkout master
@@ -69,14 +90,76 @@ sudo -u s7otrs /opt/module-tools/bin/otrs.ModuleTools.pl TestSystem::Instance::S
 
 echo -e "\\n${yellow}======================================================================="
 
-# Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf
-echo -e "${yellow}Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf"
-echo -e "======================================================================="
-sudo cp -a /opt/$OTRS/Kernel/WebApp.conf.dist /opt/$OTRS/Kernel/WebApp.conf
-echo -e "${green}"
+# Install modules.
+if [[ $Module != "No" ]]
+	then 
+		echo -e "\\n"
+		echo -e "${yellow}Installing $Module modules"
+		echo -e "======================================================================="
+		echo -e "${green}"
+		perl ../module-tools/bin/otrs.ModuleTools.pl Module::Package::Install $Module
+fi
 
 # Rebuild config.
 echo "${yellow}Rebuilding config:"
- echo "${yellow}======================================================================="
- echo -e "\n"
- perl bin/otrs.Console.pl Maint::Config::Rebuild --cleanup
+echo "${yellow}======================================================================="
+echo -e "\n"
+perl bin/otrs.Console.pl Maint::Config::Rebuild
+
+Branch=$(git rev-parse --abbrev-ref HEAD)
+if [[ $Branch == "master" ]] 
+	then
+
+	# Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf
+	echo -e "${yellow}Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf"
+	echo -e "======================================================================="
+	sudo cp -a /opt/$OTRS/Kernel/WebApp.conf.dist /opt/$OTRS/Kernel/WebApp.conf
+	echo -e "${green}Done.\\n"
+else
+	if [[ $OTRS != "otrs" ]] 
+	then	
+		# Disable OTRS site and enable it again.
+		echo -e "${yellow}Enable OTRS $OTRS site"
+		echo -e "======================================================================="
+		echo -e "${green}"
+
+		SitePath="/etc/apache2/other/$OTRS.conf"
+		sudo cp $SitePath /etc/apache2/sites-available/
+		sudo a2ensite $OTRS
+
+		echo -e "\\n${yellow}======================================================================="
+
+		# Enable ModPerl for this site.
+		perl /opt/scripts/OTRS-AllInOne/ActivateSite.sh $OTRS
+	fi	
+fi
+
+# Adding users to all groups.
+if [[ $DBType == "Mysql" && $Module != "No" ]]
+	then 
+		echo -e "${yellow}Adding users to all groups..."
+		echo -e "======================================================================="
+		echo -e "${green}"
+		OTRSDB="$(sed s/-/_/g <<< $OTRS)"
+
+		# Get all users from the DB.
+		UsersString=$(mysql $OTRSDB -uroot -proot -e "SELECT login FROM users ORDER BY login")
+		IFS=$'\n' AllUsers=($(grep -oP '^(\w|-|@)*$' <<< "$UsersString"))
+		AllUsers=("${AllUsers[@]:1}")
+
+		# Get all groups from the DB.
+		GroupsString=$(mysql $OTRSDB -uroot -proot -e "SELECT name FROM groups ORDER BY name")
+		IFS=$'\n' AllGroups=($(grep -oP '^(\w|-)*$' <<< "$GroupsString"))
+		AllGroups=("${AllGroups[@]:1}") 
+
+		# Add each user to each group with rw access.
+		for User in "${AllUsers[@]}"
+		do
+			for Group in "${AllGroups[@]}"
+			do
+			    perl /opt/$OTRS/bin/otrs.Console.pl Admin::Group::UserLink --user-name $User --group-name $Group --permission rw --quiet
+			done
+		done
+		echo -e "${green}Done.\\n"
+fi		
+
