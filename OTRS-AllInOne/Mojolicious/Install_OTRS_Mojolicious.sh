@@ -16,21 +16,24 @@ if [[ ! $Module ]]
 	then Module="No"
 fi
 
-if [[ $DBType == "Postgresql" ]]
-	then /opt/scripts/DropTableOTRS_PG.sh
-else
-	/opt/scripts/DropTableOTRS.sh
-	
-	 # Grant Mysql DB privileges to the 'otrs' user to be able to create other necessary users.
-	 if [[ $DBType == "Mysql" ]]
-		then echo -e "\n${yellow}Give 'otrs' user all privileges for MySQL DB"
-	 	 	 echo -e "${yellow}======================================================================="
+if [[ $OTRS == "otrs" ]]
+then
+	if [[ $DBType == "Postgresql" ]]
+		then /opt/scripts/DropTableOTRS_PG.sh
+	else
+		/opt/scripts/DropTableOTRS.sh
+		
+		 # Grant Mysql DB privileges to the 'otrs' user to be able to create other necessary users.
+		 if [[ $DBType == "Mysql" ]]
+			then echo -e "\n${yellow}Give 'otrs' user all privileges for MySQL DB"
+		 	 	 echo -e "${yellow}======================================================================="
 
-		     sudo echo "GRANT ALL ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
-		 	 sudo echo "GRANT GRANT OPTION ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+			     sudo echo "GRANT ALL ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+			 	 sudo echo "GRANT GRANT OPTION ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
 
-			 echo -e "${green}Done"
-	 fi
+				 echo -e "${green}Done"
+		 fi
+	fi
 fi
 
 # Define needed script variables.
