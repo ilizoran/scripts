@@ -119,7 +119,7 @@ my $ConfigInjectStr = <<"EOD";
     \$Self->{'ProductName'}         = '$SystemName';
     \$Self->{'ScriptAlias'}         = '$SystemName/';
     \$Self->{'Frontend::WebPath'}   = '/$SystemName-web/';
-    \$Self->{'CheckEmailAddresses'} = 0;
+    \$Self->{'CheckEmailAddresses'} = 1;
     \$Self->{'CheckMXRecord'}       = 0;
     \$Self->{'Organization'}        = '';
     \$Self->{'LogModule'}           = 'Kernel::System::Log::File';
@@ -130,7 +130,7 @@ my $ConfigInjectStr = <<"EOD";
     \$Self->{'AdminEmail'}          = 'root\@localhost';
     \$Self->{'Package::Timeout'}    = '120';
 
-    \$Self->{'CheckEmailAddresses'} = 0;
+    \$Self->{'CheckEmailAddresses'} = 1;
     \$Self->{'CheckMXRecord'}       = 0;
 
     # Fred
