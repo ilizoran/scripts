@@ -42,7 +42,7 @@ NUMS=(
         # OTRSCICustomSearch
         # OTRSDownloadStatsServer
         # OTRSRestorePendingInformation
-<<<<<<< Updated upstream
+
         # OTRSDynamicFieldAttachment
         # OTRSCodePolicy
         # OTRSEscalationSuspend
@@ -52,23 +52,7 @@ NUMS=(
         # OTRSDynamicFieldAttachment
         # OTRSAdvancedEditor
         # OTRSDataCompress
-=======
-        # OTRSStatsOTRSGroup
-        # OTRSDynamicFieldAttachment
-        # OTRSCustomerPortal
-        # OTRSCodePolicy
-        # otrsescalationsuspend
-        # OTRSTicketMaskExtensions
-        # OTRSHideShowDynamicFields
-        # OTRSSchedulerFAQTicketCreate
-        # OTRSTicketWorkflow
-        # GitInterface
-        # PackageCompatibility
-        # OTRSCodeHub
-        # OPMS
-        # OTRSContinuousIntegrationMaster
-        # OTRSDynamicFieldAttachment
->>>>>>> Stashed changes
+
         )
 
 for NUM in "${NUMS[@]}"
