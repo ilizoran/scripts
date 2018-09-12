@@ -73,9 +73,13 @@ my $Config = {
     \$Self->{'SystemID'}            = '54';
     \$Self->{'SessionName'}         = '$SystemName';
     \$Self->{'ProductName'}         = '$SystemName';
+    if( \$Self->{ProductName} =~ /otrs7.*$/ ){
+        \$Self->{'TestHTTPHostname'}    = 'localhost:3001';
+    }
+    
     \$Self->{'ScriptAlias'}         = '$SystemName/';
     \$Self->{'Frontend::WebPath'}   = '/$SystemName-web/';
-    \$Self->{'TestHTTPHostname'}    = 'localhost:3001';
+
     # \$Self->{'CheckEmailAddresses'} = 1;
     \$Self->{'CheckMXRecord'}       = 0;
     \$Self->{'Organization'}        = '';
