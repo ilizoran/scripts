@@ -18,25 +18,56 @@ if [[ $Module == "Postgresql" || $Module == "Mysql" || $Module == "" ]]
 		Module="No"
 fi
 
-# if [[ $OTRS == "otrs" ]]
-# then
-# 	if [[ $DBType == "Postgresql" ]]
-# 		then /opt/scripts/DropTableOTRS_PG.sh
-# 	else
-# 		/opt/scripts/DropTableOTRS.sh
+if [[ $OTRS == "otrs" || $OTRS == "otrs7" ]]
+then
+	if [[ $DBType == "Postgresql" ]]
+		then 
+
+		# delete DB otrs
+		echo -e "\\n"
+		echo "${yellow}Drop DB:"
+		echo "${yellow}======================================================================="
+		echo -e "\\n"
+
+		sudo /etc/init.d/postgresql restart
+
+		PGPASSWORD=root psql -U postgres -h localhost -l
+		PGPASSWORD=root dropdb -h localhost  -U postgres $OTRS
+		echo -e "\\n${green}DB i is droped\\n"
+
+		PGPASSWORD=root psql -U postgres -h localhost -l
+
+		PGPASSWORD=root psql -U postgres -h localhost -c "DROP ROLE IF EXISTS $OTRS"
+		echo -e "\\n${green}Done\\n"
+		echo -e "\\n${yellow}======================================================================="
+		echo -e "${reset}\\n"
+	else
+		# delete DB otrs
+		echo -e "\\n"
+		echo "${yellow}Drop DB"
+		echo "${yellow}======================================================================="
+		echo -e "\\n"
+
+		mysql -uroot -proot -e 'show databases'
+		mysql -uroot -proot -e "drop database $OTRS"
+		echo -e "\\n${green}DB i is droped\\n"
+
+		mysql -uroot -proot -e 'show databases'
+
+		echo -e "\\n${green}Done\\n"
+		echo -e "\\n${yellow}======================================================================="
+		echo -e "${reset}\\n"
 		
-# 		 # Grant Mysql DB privileges to the 'otrs' user to be able to create other necessary users.
-# 		 if [[ $DBType == "Mysql" ]]
-# 			then echo -e "\n${yellow}Give 'otrs' user all privileges for MySQL DB"
-# 		 	 	 echo -e "${yellow}======================================================================="
+		# Grant Mysql DB privileges to the 'otrs' user to be able to create other necessary users.
+		echo -e "\n${yellow}Give 'otrs' user all privileges for MySQL DB"
+	 	echo -e "${yellow}======================================================================="
 
-# 			     sudo echo "GRANT ALL ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
-# 			 	 sudo echo "GRANT GRANT OPTION ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+     	sudo echo "GRANT ALL ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
+ 	 	sudo echo "GRANT GRANT OPTION ON *.* TO 'otrs'@'localhost'" | mysql -u "root" "-proot"
 
-# 				 echo -e "${green}Done"
-# 		 fi
-# 	fi
-# fi
+	 	echo -e "${green}Done"
+	fi
+fi
 
 # Define needed script variables.
 FrameworkRoot="/opt/$OTRS"
@@ -44,6 +75,7 @@ FrameworkRoot="/opt/$OTRS"
 cd ../module-tools/
 git checkout master
 cd /opt/$OTRS
+$GroupTable="groups"
 
 if [[ $OTRS == *"otrs7"* ]]
 	then OTRSName="OTRS 7 Mojolicious"
@@ -155,7 +187,12 @@ if [[ $Module != "No" ]]
 				AllUsers=("${AllUsers[@]:1}")
 
 				# Get all groups from the DB.
-				GroupsString=$(mysql $OTRSDB -uroot -proot -e "SELECT name FROM groups ORDER BY name")
+				if [[ $Branch == "master" ]]
+					then
+					GroupsString=$(mysql $OTRSDB -uroot -proot -e "SELECT name FROM groups_table ORDER BY name")
+				else
+					GroupsString=$(mysql $OTRSDB -uroot -proot -e "SELECT name FROM groups ORDER BY name")
+				fi	
 				IFS=$'\n' AllGroups=($(grep -oP '^(\w|-)*$' <<< "$GroupsString"))
 				AllGroups=("${AllGroups[@]:1}") 
 		else
@@ -165,7 +202,13 @@ if [[ $Module != "No" ]]
 				IFS=$'\n' AllUsers=($(grep -oP '^\s(\w|-|@)*$' <<< "$UsersString"))
 
 				# Get all groups from the DB.
-				GroupsString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT name FROM groups ORDER BY name")
+				if [[ $Branch == "master" ]]
+					then
+					GroupsString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT name FROM groups_table ORDER BY name")
+				else
+					GroupsString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT name FROM groups ORDER BY name")
+				fi
+				
 				IFS=$'\n' AllGroups=($(grep -oP '^\s(\w|-)*$' <<< "$GroupsString"))
 		fi
 
