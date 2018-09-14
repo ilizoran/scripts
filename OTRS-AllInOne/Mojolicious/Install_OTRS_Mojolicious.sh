@@ -7,6 +7,7 @@ OTRS=$1
 Module=$2
 DBType=$3
 
+
 # If DBType param is not available use Mysql as default.
 if [[ ! $DBType ]]
 	then DBType="Mysql"
