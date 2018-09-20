@@ -75,7 +75,6 @@ FrameworkRoot="/opt/$OTRS"
 cd ../module-tools/
 git checkout master
 cd /opt/$OTRS
-$GroupTable="groups"
 
 if [[ $OTRS == *"otrs7"* ]]
 	then OTRSName="OTRS 7 Mojolicious"
