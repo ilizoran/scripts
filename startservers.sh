@@ -3,7 +3,7 @@
 Branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Script should be executed from the OTRS folder and elastic search in /opt
-if [[ "$Branch" == "master" ]] 
+if [[ "$Branch" == *"master"* ]] 
 	then gnome-terminal \
 		--tab -e "perl /opt/otrs7-mojo/bin/otrs.Console.pl Dev::Tools::WebServer" \
 		--tab -e "/opt/elasticsearch/bin/elasticsearch" \
