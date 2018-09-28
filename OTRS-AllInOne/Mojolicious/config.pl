@@ -477,6 +477,10 @@ EOD
             '/opt/ITSMServiceLevelManagement',
             '/opt/ImportExport',
             '/opt/OTRSCodePolicy',
+            '/opt/OTRSMasterSlave',
+            '/opt/Survey',
+            '/opt/SystemMonitoring',
+            '/opt/TimeAccounting',
         ],
         Portal => [
             '/opt/Campain',
