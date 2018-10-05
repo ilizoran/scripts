@@ -88,7 +88,7 @@ my $Config = {
     \$Self->{'FQDN'}                = 'localhost';
     \$Self->{'DefaultLanguage'}     = 'en';
     \$Self->{'DefaultCharset'}      = 'utf-8';
-    \$Self->{'AdminEmail'}          = 'root\@localhost';
+    \$Self->{'AdminEmail'}          = 'root@localhost';
     \$Self->{'Package::Timeout'}    = '120';
 
     # Configure send main
@@ -96,7 +96,7 @@ my $Config = {
     \$Self->{'SendmailModule::AuthUser'}     =  'zilibasic@s7designcreative.com';
     \$Self->{'SendmailModule::Port'}         =  '25';
     \$Self->{'SendmailModule::Host'}         =  'mail.s7designcreative.com';
-    \$Self->{'SendmailModule'}               =  'Kernel::System::Email::DoNotSendEmail';
+    \$Self->{'SendmailModule'}               =  'Kernel::System::Email::Test';
 
     # Fred
     #\$Self->{'Fred::BackgroundColor'} = '#006ea5';
