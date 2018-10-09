@@ -107,28 +107,25 @@ my $Config = {
 
     # Selenium
     # For testing with Firefox until v. 47 (testing with recent FF and marionette is currently not supported):
-    # \$Self->{'SeleniumTestsConfig'} = {
-    #     remote_server_addr  => 'localhost',
-    #     port                => '4444',
-    #     platform            => 'ANY',
-    #     browser_name        => 'firefox',
-    #     extra_capabilities => {
-    #         marionette     => \0,     # Required to run FF 47 or older on Selenium 3+.
-    #     },
-    # };
-
-    # For testing with Chrome/Chromium (requires installed geckodriver):
     \$Self->{'SeleniumTestsConfig'} = {
         remote_server_addr  => 'localhost',
         port                => '4444',
         platform            => 'ANY',
-        browser_name        => 'chrome',
-        extra_capabilities => {
-            chromeOptions => {
-                args => ["no-sandbox", "disable-infobars"],
-            },
-        },
+        browser_name        => 'firefox',
     };
+
+    # For testing with Chrome/Chromium (requires installed geckodriver):
+    # \$Self->{'SeleniumTestsConfig'} = {
+    #     remote_server_addr  => 'localhost',
+    #     port                => '4444',
+    #     platform            => 'ANY',
+    #     browser_name        => 'chrome',
+    #     extra_capabilities => {
+    #         chromeOptions => {
+    #             args => ["no-sandbox", "disable-infobars"],
+    #         },
+    #     },
+    # };
 
 EOD
         ,
