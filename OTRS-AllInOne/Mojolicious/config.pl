@@ -418,12 +418,15 @@ EOD
             '/opt/SystemMonitoring',
             '/opt/TimeAccounting',
         ],
-        CI => [
+        OPMS => [
             '/opt/GitInterface',
             '/opt/PackageCompatibility',
             '/opt/OTRSCodeHub',
             '/opt/OPMS',
             '/opt/OTRSContinuousIntegrationMaster',
+            '/opt/OTRSCodePolicy',
+            '/opt/OTRSDataCompress',
+            '/opt/OTRSDownloadStatsClient',
         ],
         Full4 => [
             '/opt/FAQ',
