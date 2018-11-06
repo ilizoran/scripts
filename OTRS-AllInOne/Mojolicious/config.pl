@@ -81,7 +81,7 @@ my $Config = {
     \$Self->{'Frontend::WebPath'}   = '/$SystemName-web/';
 
     # \$Self->{'CheckEmailAddresses'} = 1;
-    # \$Self->{'CheckMXRecord'}       = 0;
+    \$Self->{'CheckMXRecord'}       = 0;
     \$Self->{'Organization'}        = '';
     \$Self->{'LogModule'}           = 'Kernel::System::Log::File';
     \$Self->{'LogModule::LogFile'}  = '$Config{EnvironmentRoot}$SystemName/var/log/otrs.log';
@@ -508,6 +508,7 @@ EOD
             '/opt/OTRSDataCompress',
             '/opt/OTRSDownloadStatsServer',
             '/opt/OTRSDynamicFieldAttachment',
+            '/opt/OTRSRestrictCustomerDataView',
             '/opt/OTRSMasterSlave',
             '/opt/OTRSPortal',
             '/opt/OTRSRestorePendingInformation',
@@ -527,8 +528,8 @@ EOD
             '/opt/OTRSAdvancedEditor',
             '/opt/OTRSCICustomSearch',
             '/opt/OTRSCalendarResourcePlanning',
-            # '/opt/OTRSCodePolicy',
-            '/opt/OTRSDataCompress',
+            '/opt/OTRSCodePolicy',
+            '/opt/OTRSRestrictCustomerDataView',
             '/opt/OTRSDownloadStatsServer',
             '/opt/OTRSDynamicFieldDatabase',
             '/opt/OTRSDynamicFieldAttachment',
@@ -544,3 +545,4 @@ EOD
         ],
     },
 };
+

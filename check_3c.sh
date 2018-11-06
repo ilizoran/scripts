@@ -52,6 +52,7 @@ NUMS=(
         OTRSMultipleRecipientEncryption 
         OTRSTicketNumberCounterDatabase 
         OTRSAppointmentCalendar 
+        OTRSRestrictCustomerDataView
         )
 
 for NUM in "${NUMS[@]}"
