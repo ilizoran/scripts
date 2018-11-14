@@ -78,7 +78,7 @@ cd /opt/$OTRS
 
 if [[ $OTRS == *"otrs7"* ]]
 	then OTRSName="OTRS 7 Mojolicious"
-		 FrameworkVersion="master"
+		 FrameworkVersion="rel-7_0"
 fi
 
 # If this is first installation of OTRS for this version with this script copy content from the original folder.
@@ -143,7 +143,7 @@ echo -e "\n"
 perl bin/otrs.Console.pl Maint::Config::Rebuild
 
 Branch=$(git rev-parse --abbrev-ref HEAD)
-if [[ $Branch == "master" ]] 
+if [[ $Branch == "rel-7_0" ]] 
 	then
 
 	# Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf
@@ -186,7 +186,7 @@ if [[ $Module != "No" ]]
 				AllUsers=("${AllUsers[@]:1}")
 
 				# Get all groups from the DB.
-				if [[ $Branch == "master" ]]
+				if [[ $Branch == "rel-7_0" ]]
 					then
 					GroupsString=$(mysql $OTRSDB -uroot -proot -e "SELECT name FROM groups_table ORDER BY name")
 				else
@@ -201,7 +201,7 @@ if [[ $Module != "No" ]]
 				IFS=$'\n' AllUsers=($(grep -oP '^\s(\w|-|@)*$' <<< "$UsersString"))
 
 				# Get all groups from the DB.
-				if [[ $Branch == "master" ]]
+				if [[ $Branch == "rel-7_0" ]]
 					then
 					GroupsString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT name FROM groups_table ORDER BY name")
 				else
