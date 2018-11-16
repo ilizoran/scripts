@@ -16,9 +16,9 @@ else
 fi
 
 NUMS=(        
-        # Campain
-        # FAQ
-        # Finance
+        Campain
+        FAQ
+        Finance
         GeneralCatalog
         ITSMChangeManagement
         ITSMConfigurationManagement
@@ -26,27 +26,27 @@ NUMS=(
         ImportExport
         ITSMIncidentProblemManagement
         ITSMServiceLevelManagement
-        # OTRSAdditionalCalendars
-        # OTRSAdvancedEditor
-        # OTRSBusiness
-        # OTRSBusinessSeleniumTesting
-        # OTRSCICustomSearch
-        # OTRSCodePolicy
-        # OTRSDataCompress
-        # OTRSDownloadStatsServer
-        # OTRSDynamicFieldAttachment
-        # OTRSMasterSlave
-        # OTRSPortal
-        # OTRSRestorePendingInformation
-        # SaaSCockpit
-        # SaaSSOAP
-        # Survey
-        # SystemMonitoring
-        # TimeAccounting 
-        # OTRSMultipleRecipientEncryption 
-        # OTRSTicketNumberCounterDatabase 
-        # OTRSAppointmentCalendar
-        # OTRSRestrictCustomerDataView 
+        OTRSAdditionalCalendars
+        OTRSAdvancedEditor
+        OTRSBusiness
+        OTRSBusinessSeleniumTesting
+        OTRSCICustomSearch
+        OTRSCodePolicy
+        OTRSDataCompress
+        OTRSDownloadStatsServer
+        OTRSDynamicFieldAttachment
+        OTRSMasterSlave
+        OTRSPortal
+        OTRSRestorePendingInformation
+        SaaSCockpit
+        SaaSSOAP
+        Survey
+        SystemMonitoring
+        TimeAccounting 
+        OTRSMultipleRecipientEncryption 
+        OTRSTicketNumberCounterDatabase 
+        OTRSAppointmentCalendar
+        OTRSRestrictCustomerDataView 
         )
 
 for NUM in "${NUMS[@]}"
