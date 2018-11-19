@@ -1,6 +1,8 @@
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 
+source /opt/otrs/.bash_completion
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -148,6 +150,8 @@ echo "####################"
 alias ca="create_alias"
 alias bash="gedit ~/.bashrc"
 alias o="cd /opt/otrs"
+alias o7="cd /opt/otrs7"
+
 alias cdlogo="cd /opt/otrs/var/log/"
 alias logo="sudo gedit /opt/otrs/var/log/otrs.log"
 
@@ -173,32 +177,37 @@ alias ss='mc /tmp'
 alias cl='perl bin/otrs.Console.pl Maint::Session::DeleteAll'
 alias c='mc /opt/otrs/var/tmp'
 alias ols='perl bin/otrs.Console.pl List'
-alias sd='java -Dwebdriver.chrome.driver=../scripts/chromedriver -jar ../scripts/selenium-server-standalone.ja'
+alias sd='java -jar ../scripts/selenium-server-standalone.jar'
 alias sdc='java -Dwebdriver.chrome.driver=../scripts/chromedriver -jar ../scripts/selenium-server-standalone.jar'
 alias r='../scripts/reset_system.sh'
 alias gt='perl bin/otrs.Console.pl Dev::Tools::Database::RandomDataInsert --generate-tickets 20 --articles-per-ticket 2 --generate-users 2 --generate-customer-users 2  --generate-queues 2 --mark-tickets-as-seen'
 
+alias servers='/opt/scripts/startservers-zi.sh'
+
 # install systems
 #alias otrs='perl /opt/scripts/OTRS-AllInOne/Install_OTRS.sh'
 #alias otrsAll='perl /opt/scripts/OTRS-AllInOne/Install_All_OTRS.sh'
-alias otrsMojo='perl /opt/scripts/OTRS-AllInOne/Mojolicious/Install_OTRS_Mojolicious.sh'
+alias ins='perl /opt/scripts/OTRS-AllInOne/Mojolicious/Install_OTRS_Mojolicious.sh'
 #alias site='perl /opt/scripts/OTRS-AllInOne/ActivateSite.sh'
-#alias ipack='perl /opt/module-tools/bin/otrs.ModuleTools.pl Module::Package::Install'
-#alias upack='perl /opt/module-tools/bin/otrs.ModuleTools.pl Module::Package::Uninstall'
+alias ipack='perl /opt/module-tools/bin/otrs.ModuleTools.pl Module::Package::Install'
+alias upack='perl /opt/module-tools/bin/otrs.ModuleTools.pl Module::Package::Uninstall'
 #alias pullall='perl /opt/scripts/OTRS-AllInOne/Pull_All.sh'
 #alias rc='perl /opt/scripts/OTRS-AllInOne/Rebuild_Config.sh'
 
-alias otrs='../scripts/install_OTRS.sh'
-alias otrs4='../scripts/install_OTRS4.sh'
-alias otrsPG='../scripts/install_OTRS_PG.sh'
-alias otrsPGAll='../scripts/install_OTRS_PG_ALL.sh'
-alias otrsVanila='../scripts/install_OTRS_Vanila.sh'
-alias otrsPortal='../scripts/install_OTRS_CustomerPortal.sh'
-alias otrsAll='../scripts/install_OTRS_All.sh'
+#alias otrs='../scripts/install_OTRS.sh'
+#alias otrs4='../scripts/install_OTRS4.sh'
+#alias otrsPG='../scripts/install_OTRS_PG.sh'
+#alias otrsPGAll='../scripts/install_OTRS_PG_ALL.sh'
+#alias otrsVanila='../scripts/install_OTRS_Vanila.sh'
+#alias otrsPortal='../scripts/install_OTRS_CustomerPortal.sh'
+#alias otrsAll='../scripts/install_OTRS_All.sh'
 
 # unlink all modules
 alias ul='perl ../scripts/Linker.pl -a uninstall -m /opt -o /opt/otrs -l All -d'
 alias up='../scripts/otrs_customer_portal_uninstall.sh'
+alias ua='../scripts/otrs_all_uninstall.sh'
+alias cl='git clean -dfx'
+
 
 alias fetch='perl bin/otrs.Console.pl Maint::PostMaster::Read < '
 
@@ -212,12 +221,20 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias confmig='perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory /opt/otrs/Kernel/Config/Files/'
+alias r4='git checkout rel-4_0'
+alias r5='git checkout rel-5_0'
+alias r6='git checkout rel-6_0'
+alias m='git checkout master'
 
+alias confmig='perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory /opt/otrs/Kernel/Config/Files/'
 alias mojo='bin/otrs.Console.pl Dev::Tools::WebServer'
 
 # merge bug fix branch
 alias bs='./../scripts/BugBranchMerge.sh'
+alias ac='git ac --bug'
+alias ms='git merge --squash --no-commit'
+alias ca='git commit --author'
+
 
 PERL_MB_OPT="--install_base \"/home/s7otrs/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/s7otrs/perl5"; export PERL_MM_OPT;
