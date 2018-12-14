@@ -181,6 +181,11 @@ if [[ $Module != "No" ]]
 		echo -e "${green}"
 		OTRSDB="$(sed s/-/_/g <<< $OTRS)"
 
+        if [[ $Module == "OPMS" ]]
+        	then
+        		perl /opt/$OTRS/bin/otrs.Console.pl Admin::Group::Add --name 'ci-frontend' --quiet
+    	fi
+
 		if [[ $DBType == "Mysql" ]]
 			then 
 				# Get all users from the DB.

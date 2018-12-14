@@ -37,6 +37,7 @@ NUMS=(
         OTRSDynamicFieldAttachment
         OTRSMasterSlave
         OTRSPortal
+        OTRSSTORM
         OTRSRestorePendingInformation
         SaaSCockpit
         SaaSSOAP
@@ -47,6 +48,14 @@ NUMS=(
         OTRSTicketNumberCounterDatabase 
         OTRSAppointmentCalendar
         OTRSRestrictCustomerDataView 
+        GitInterface
+        PackageCompatibility
+        OTRSCodeHub
+        OPMS
+        OTRSContinuousIntegrationMaster
+        OTRSCodePolicy
+        OTRSDataCompress
+        OTRSDownloadStatsClient
         )
 
 for NUM in "${NUMS[@]}"
