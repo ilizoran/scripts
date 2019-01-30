@@ -11,6 +11,8 @@ elif [[ $1 == 5 ]]
 	then branch='rel-5_0'
 elif [[ $1 == 6 ]]
 	then branch='rel-6_0'
+elif [[ $1 == 7 ]]
+    then branch='rel-7_0'
 else
 	branch='master'
 fi

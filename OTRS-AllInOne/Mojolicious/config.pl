@@ -428,6 +428,11 @@ EOD
             '/opt/OTRSDataCompress',
             '/opt/OTRSDownloadStatsClient',
         ],
+        OTRSSTORM => [
+            '/opt/OTRSBusiness',
+            '/opt/OTRSBusinessSeleniumTesting',
+            '/opt/OTRSSTORM',
+        ],
         Full4 => [
             '/opt/FAQ',
             '/opt/GeneralCatalog',
