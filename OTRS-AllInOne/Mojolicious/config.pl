@@ -73,7 +73,7 @@ my $Config = {
     \$Self->{'SystemID'}            = '54';
     \$Self->{'SessionName'}         = '$SystemName';
     \$Self->{'ProductName'}         = '$SystemName';
-    if( \$Self->{ProductName} =~ /otrs7.*$/ ){
+    if( \$Self->{ProductName} =~ /otrs(7|8).*\$/ ){
         \$Self->{'TestHTTPHostname'}    = 'localhost:3001';
     }
     
@@ -108,6 +108,62 @@ my $Config = {
     # Misc
     \$Self->{'Loader::Enabled::CSS'}  = 0;
     \$Self->{'Loader::Enabled::JS'}   = 0;
+
+    # Disable password policy.
+    \$Self->{'Agent::AuthTwoFactor::RequiredSetupException'}->{'999-ZIL'} = [
+        'zilibasic',
+        'svik',
+        'mrakic',
+    ];
+    \$Self->{'PasswordPolicy::ExceptAgentPasswordComplexity'}->{'999-ZIL'} = [
+        'zilibasic',
+        'svik',
+        'mrakic',
+    ];
+    \$Self->{'PasswordPolicy::ExceptAgentPasswordTTL'}->{'999-ZIL'} = [
+        'zilibasic',
+        'svik',
+        'mrakic',
+    ];
+    \$Self->{'PasswordPolicy::ExceptAgentPasswordHistory'}->{'999-ZIL'} = [
+        'zilibasic',
+        'svik',
+        'mrakic',
+    ];
+    \$Self->{'PasswordPolicy::ExceptAgentPasswordChangeAfterFirstLogin'}->{'999-ZIL'} = [
+        'zilibasic',
+        'svik',
+    ];
+    \$Self->{'Customer::AuthTwoFactor::RequiredSetupException'}->{'999-ZIL'} = [
+        'pera',
+        'steva',
+        'ana',
+        'susanne',
+    ];
+    \$Self->{'PasswordPolicy::ExceptCustomerPasswordComplexity'}->{'999-ZIL'} = [
+        'pera',
+        'steva',
+        'ana',
+        'susanne',
+    ];
+    \$Self->{'PasswordPolicy::ExceptCustomerPasswordTTL'}->{'999-ZIL'} = [
+        'pera',
+        'steva',
+        'ana',
+        'susanne',
+    ];
+    \$Self->{'PasswordPolicy::ExceptCustomerPasswordHistory'}->{'999-ZIL'} = [
+        'pera',
+        'steva',
+        'ana',
+        'susanne',
+    ];
+    \$Self->{'PasswordPolicy::ExceptCustomerPasswordChangeAfterFirstLogin'}->{'999-ZIL'} = [
+        'pera',
+        'steva',
+        'ana',
+        'susanne',
+    ];
 
     # Selenium
     # For testing with Firefox until v. 47 (testing with recent FF and marionette is currently not supported):
