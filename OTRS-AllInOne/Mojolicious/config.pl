@@ -73,8 +73,11 @@ my $Config = {
     \$Self->{'SystemID'}            = '54';
     \$Self->{'SessionName'}         = '$SystemName';
     \$Self->{'ProductName'}         = '$SystemName';
-    if( \$Self->{ProductName} =~ /otrs(7|8).*\$/ ){
+    if( \$Self->{ProductName} =~ /otrs7.*\$/ ){
         \$Self->{'TestHTTPHostname'}    = 'localhost:3001';
+    }
+    elsif ( \$Self->{ProductName} =~ /otrs8.*\$/ ){
+        \$Self->{'TestHTTPHostname'}    = 'localhost:3010';
     }
     
     \$Self->{'ScriptAlias'}         = '$SystemName/';
