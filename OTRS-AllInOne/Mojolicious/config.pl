@@ -77,7 +77,7 @@ my $Config = {
         \$Self->{'TestHTTPHostname'}    = 'localhost:3001';
     }
     elsif ( \$Self->{ProductName} =~ /otrs8.*\$/ ){
-        \$Self->{'TestHTTPHostname'}    = 'localhost:3010';
+        \$Self->{'TestHTTPHostname'}    = 'localhost:3011';
     }
     
     \$Self->{'ScriptAlias'}         = '$SystemName/';
