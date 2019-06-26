@@ -186,6 +186,7 @@ my $Config = {
     #     extra_capabilities => {
     #         chromeOptions => {
     #             args => ["no-sandbox", "disable-infobars"],
+    #             w3c => \0,
     #         },
     #     },
     # };
