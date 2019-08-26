@@ -185,7 +185,7 @@ my $Config = {
     #     browser_name        => 'chrome',
     #     extra_capabilities => {
     #         chromeOptions => {
-    #             args => ["no-sandbox", "disable-infobars"],
+    #             args => ["disable-infobars", "headless", "window-size=1280x1024"],
     #             w3c => \0,
     #         },
     #     },
