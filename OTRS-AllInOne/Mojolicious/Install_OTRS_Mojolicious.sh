@@ -153,6 +153,7 @@ if [[ $Branch == "rel-7_0" || $Branch == "master" ]]
 	echo -e "${yellow}Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf"
 	echo -e "======================================================================="
 	sudo cp -a /opt/$OTRS/Kernel/WebApp.conf.dist /opt/$OTRS/Kernel/WebApp.conf
+	sudo sed -i -e 's|selenium_test_mode\s*=>.*|selenium_test_mode => 1,|' /opt/$OTRS/Kernel/WebApp.conf
 	echo -e "${green}Done.\\n"
 else
 	if [[ $OTRS != "otrs" ]] 
