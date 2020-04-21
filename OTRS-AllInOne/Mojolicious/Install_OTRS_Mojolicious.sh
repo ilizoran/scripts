@@ -77,11 +77,16 @@ git checkout master
 cd /opt/$OTRS
 
 if [[ $OTRS == *"otrs7"* ]]
-	then OTRSName="OTRS 7 Mojolicious"
+	then OTRSName="OTRS 7"
 		 FrameworkVersion="rel-7_0"
 else [[ $OTRS == *"otrs8"* ]]
 		 OTRSName="OTRS 8"
-		 FrameworkVersion="master"
+		 FrameworkVersion="rel-8_0"
+fi
+if [[ $OTRS == *"otrs9"* ]]
+then
+	 OTRSName="OTRS 9"
+	 FrameworkVersion="master"
 fi
 
 # If this is first installation of OTRS for this version with this script copy content from the original folder.
