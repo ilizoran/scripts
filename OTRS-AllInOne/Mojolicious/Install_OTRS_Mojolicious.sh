@@ -14,14 +14,14 @@ if [[ ! $DBType ]]
 fi
 
 if [[ $Module == "Postgresql" || $Module == "Mysql" || $Module == "" ]]
-	then 
+	then
 		Module="No"
 fi
 
-if [[ $OTRS == "otrs" || $OTRS == "otrs7" || $OTRS == "otrs8" ]]
+if [[ $OTRS == "otrs" || $OTRS == "otrs7" || $OTRS == "otrs8" || $OTRS == "otrs9" ]]
 then
 	if [[ $DBType == "Postgresql" ]]
-		then 
+		then
 
 		# delete DB otrs
 		echo -e "\\n"
@@ -57,7 +57,7 @@ then
 		echo -e "\\n${green}Done\\n"
 		echo -e "\\n${yellow}======================================================================="
 		echo -e "${reset}\\n"
-		
+
 		# Grant Mysql DB privileges to the 'otrs' user to be able to create other necessary users.
 		echo -e "\n${yellow}Give 'otrs' user all privileges for MySQL DB"
 	 	echo -e "${yellow}======================================================================="
@@ -79,12 +79,10 @@ cd /opt/$OTRS
 if [[ $OTRS == *"otrs7"* ]]
 	then OTRSName="OTRS 7"
 		 FrameworkVersion="rel-7_0"
-else [[ $OTRS == *"otrs8"* ]]
-		 OTRSName="OTRS 8"
+elif [[ $OTRS == *"otrs8"* ]]
+	then OTRSName="OTRS 8"
 		 FrameworkVersion="rel-8_0"
-fi
-if [[ $OTRS == *"otrs9"* ]]
-then
+else [[ $OTRS == *"otrs9"* ]]
 	 OTRSName="OTRS 9"
 	 FrameworkVersion="master"
 fi
@@ -94,7 +92,7 @@ if [[ ! -d $FrameworkRoot ]]
 	then echo -e "\n${yellow}Preparing $OTRSName $DBType"
 		 echo -e "${yellow}======================================================================="
 		 echo -e "${green}"
-		 echo -e "Copying OTRS original content to $OTRSName new folder please wait..." 
+		 echo -e "Copying OTRS original content to $OTRSName new folder please wait..."
 
 		 sudo cp -a /opt/otrs/. $FrameworkRoot
 		 echo -e "Done"
@@ -136,7 +134,7 @@ echo -e "\\n${yellow}===========================================================
 
 # Install modules.
 if [[ $Module != "No" ]]
-	then 
+	then
 		echo -e "\\n"
 		echo -e "${yellow}Installing $Module modules"
 		echo -e "======================================================================="
@@ -151,7 +149,7 @@ echo -e "\n"
 perl bin/otrs.Console.pl Maint::Config::Rebuild
 
 Branch=$(git rev-parse --abbrev-ref HEAD)
-if [[ $Branch == "rel-7_0" || $Branch == "master" ]] 
+if [[ $Branch == "rel-7_0" || $Branch == "rel-8_0" || $Branch == "master" ]]
 	then
 
 	# Copy Kernel/WebApp.conf.dist to Kernel/WebApp.conf
@@ -161,8 +159,8 @@ if [[ $Branch == "rel-7_0" || $Branch == "master" ]]
 	sudo sed -i -e 's|selenium_test_mode\s*=>.*|selenium_test_mode => 1,|' /opt/$OTRS/Kernel/WebApp.conf
 	echo -e "${green}Done.\\n"
 else
-	if [[ $OTRS != "otrs" ]] 
-	then	
+	if [[ $OTRS != "otrs" ]]
+	then
 		# Disable OTRS site and enable it again.
 		echo -e "${yellow}Enable OTRS $OTRS site"
 		echo -e "======================================================================="
@@ -176,7 +174,7 @@ else
 
 		# Enable ModPerl for this site.
 		perl /opt/scripts/OTRS-AllInOne/ActivateSite.sh $OTRS
-	fi	
+	fi
 fi
 
 # Adding users to all groups.
@@ -193,35 +191,35 @@ if [[ $Module != "No" ]]
     	fi
 
 		if [[ $DBType == "Mysql" ]]
-			then 
+			then
 				# Get all users from the DB.
 				UsersString=$(mysql $OTRSDB -uroot -proot -e "SELECT login FROM users ORDER BY login")
 				IFS=$'\n' AllUsers=($(grep -oP '^(\w|-|@)*$' <<< "$UsersString"))
 				AllUsers=("${AllUsers[@]:1}")
 
 				# Get all groups from the DB.
-				if [[ $Branch == "rel-7_0" || $Branch == "master" ]]
+				if [[ $Branch == "rel-7_0" || $Branch == "rel-8_0" || $Branch == "master" ]]
 					then
 					GroupsString=$(mysql $OTRSDB -uroot -proot -e "SELECT name FROM groups_table ORDER BY name")
 				else
 					GroupsString=$(mysql $OTRSDB -uroot -proot -e "SELECT name FROM groups ORDER BY name")
-				fi	
+				fi
 				IFS=$'\n' AllGroups=($(grep -oP '^(\w|-)*$' <<< "$GroupsString"))
-				AllGroups=("${AllGroups[@]:1}") 
+				AllGroups=("${AllGroups[@]:1}")
 		else
 
 				# Get all users from the DB.
-				UsersString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT login FROM users ORDER BY login")	
+				UsersString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT login FROM users ORDER BY login")
 				IFS=$'\n' AllUsers=($(grep -oP '^\s(\w|-|@)*$' <<< "$UsersString"))
 
 				# Get all groups from the DB.
-				if [[ $Branch == "rel-7_0" || $Branch == "master" ]]
+				if [[ $Branch == "rel-7_0" || $Branch == "rel-8_0" || $Branch == "master" ]]
 					then
 					GroupsString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT name FROM groups_table ORDER BY name")
 				else
 					GroupsString=$(PGPASSWORD=root psql -U postgres -h localhost -d $OTRSDB -c "SELECT name FROM groups ORDER BY name")
 				fi
-				
+
 				IFS=$'\n' AllGroups=($(grep -oP '^\s(\w|-)*$' <<< "$GroupsString"))
 		fi
 
@@ -236,7 +234,4 @@ if [[ $Module != "No" ]]
 			done
 		done
 		echo -e "${green}Done.\\n"
-fi	  
-
-	
-
+fi
