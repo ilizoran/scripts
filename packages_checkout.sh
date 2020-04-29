@@ -13,6 +13,8 @@ elif [[ $1 == 6 ]]
 	then branch='rel-6_0'
 elif [[ $1 == 7 ]]
     then branch='rel-7_0'
+elif [[ $1 == 8 ]]
+    then branch='rel-8_0'
 else
 	branch='master'
 fi
@@ -58,6 +60,11 @@ NUMS=(
         OTRSCodePolicy
         OTRSDataCompress
         OTRSDownloadStatsClient
+        OTRSHideShowDynamicFields
+        OTRSImagePreview
+        OTRSStatePreselectionResponseTemplates
+        OTRSTicketInvoker
+        OTRSTicketWatchlist
         )
 
 for NUM in "${NUMS[@]}"
@@ -67,8 +74,16 @@ do
     echo $NUM
     echo -e "${reset}"
 	git stash save
-	git checkout $branch
+
+
+	git checkout master
 	git pull
+
+    if [[ $branch != 'master' ]]
+    then 
+        git checkout $branch
+        git pull
+    fi
 	echo -e "${yellow}======================================================================="
 done
 
