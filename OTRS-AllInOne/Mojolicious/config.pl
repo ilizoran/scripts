@@ -68,16 +68,17 @@ my $Config = {
     #    DatabaseUser => 'otrs_test',
     #    DatabasePw   => 'otrs_test',
     #};
-
+    
     \$Self->{'SecureMode'} = 1;
     \$Self->{'SystemID'}            = '54';
     \$Self->{'SessionName'}         = '$SystemName';
     \$Self->{'ProductName'}         = '$SystemName';
-    if( \$Self->{ProductName} =~ /otrs7.*\$/ ){
-        \$Self->{'TestHTTPHostname'}    = 'localhost:3001';
-    }
-    elsif ( \$Self->{ProductName} =~ /otrs8.*\$/ ){
+    \$Self->{'TestHTTPHostname'}    = 'localhost:3001'; 
+    if( \$Self->{ProductName} =~ /otrs8.*\$/ ){
         \$Self->{'TestHTTPHostname'}    = 'localhost:3011';
+    }
+    elsif ( \$Self->{ProductName} =~ /otrs9.*\$/ ){
+        \$Self->{'TestHTTPHostname'}    = 'localhost:3021';
     }
     
     \$Self->{'ScriptAlias'}         = '$SystemName/';
