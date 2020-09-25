@@ -142,6 +142,12 @@ if [[ $Module != "No" ]]
 		perl ../module-tools/bin/otrs.ModuleTools.pl Module::Package::Install $Module
 fi
 
+# Update registration date.
+if [[ $DBType == "Mysql" ]]
+then 
+	/opt/scripts/registrationOTRS.sh $OTRS
+fi
+
 # Rebuild config.
 echo "${yellow}Rebuilding config:"
 echo "${yellow}======================================================================="
@@ -235,3 +241,4 @@ if [[ $Module != "No" ]]
 		done
 		echo -e "${green}Done.\\n"
 fi
+

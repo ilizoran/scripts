@@ -73,8 +73,11 @@ my $Config = {
     \$Self->{'SystemID'}            = '54';
     \$Self->{'SessionName'}         = '$SystemName';
     \$Self->{'ProductName'}         = '$SystemName';
-    \$Self->{'TestHTTPHostname'}    = 'localhost:3001'; 
-    if( \$Self->{ProductName} =~ /otrs8.*\$/ ){
+    
+    if( \$Self->{ProductName} =~ /otrs7.*\$/ ){
+         \$Self->{'TestHTTPHostname'}    = 'localhost:3001';
+    }
+    elsif( \$Self->{ProductName} =~ /otrs8.*\$/ ){
         \$Self->{'TestHTTPHostname'}    = 'localhost:3011';
     }
     elsif ( \$Self->{ProductName} =~ /otrs9.*\$/ ){
@@ -84,7 +87,7 @@ my $Config = {
     \$Self->{'ScriptAlias'}         = '$SystemName/';
     \$Self->{'Frontend::WebPath'}   = '/$SystemName-web/';
 
-    # \$Self->{'CheckEmailAddresses'} = 1;
+    \$Self->{'CheckEmailAddresses'} = 0;
     \$Self->{'CheckMXRecord'}       = 0;
     \$Self->{'Organization'}        = '';
     \$Self->{'LogModule'}           = 'Kernel::System::Log::File';
@@ -101,6 +104,11 @@ my $Config = {
     \$Self->{'SendmailModule::Port'}         =  '25';
     \$Self->{'SendmailModule::Host'}         =  'mail.s7designcreative.com';
     \$Self->{'SendmailModule'}               =  'Kernel::System::Email::Test';
+
+    # Disable system registration validation.
+    delete \$Self->{'Frontend::NotifyModule'}->{'1100-SystemContract'};
+    delete \$Self->{'AgentFrontend::NotifyModule'}->{'3000-SystemContract'};
+    delete \$Self->{'AuthPostAuthModule'}->{'1000-AgentSystemContract'};
 
     # Fred
     #\$Self->{'Fred::BackgroundColor'} = '#006ea5';
