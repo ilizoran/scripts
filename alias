@@ -149,15 +149,15 @@ echo "####################"
 
 alias ca="create_alias"
 alias bash="gedit ~/.bashrc"
-alias o="cd /opt/otrs"
-alias o7="cd /opt/otrs7"
+
+alias tag="git fetch --tags && git tag"
 
 alias cdlogo="cd /opt/otrs/var/log/"
 alias logo="sudo gedit /opt/otrs/var/log/otrs.log"
 
 alias cdloga='cd /var/log/apache2'
 alias loga='sudo gedit /var/log/apache2/error.log'
-alias listag='gedit /root/.gitconfig'
+alias listag='gedit ~/.gitconfig'
 alias sp='bin/otrs.SetPermissions.pl --otrs-user=otrs  --web-group=www-data /opt/otrs'
 
 alias sf='../scripts/sync_fork.sh'
@@ -182,8 +182,6 @@ alias sdc='java -Dwebdriver.chrome.driver=../scripts/chromedriver -jar ../script
 alias r='../scripts/reset_system.sh'
 alias gt='perl bin/otrs.Console.pl Dev::Tools::Database::RandomDataInsert --generate-tickets 20 --articles-per-ticket 2 --generate-users 2 --generate-customer-users 2  --generate-queues 2 --mark-tickets-as-seen'
 
-alias servers='/opt/scripts/startservers-zi.sh'
-
 # install systems
 #alias otrs='perl /opt/scripts/OTRS-AllInOne/Install_OTRS.sh'
 #alias otrsAll='perl /opt/scripts/OTRS-AllInOne/Install_All_OTRS.sh'
@@ -193,6 +191,8 @@ alias ipack='perl /opt/module-tools/bin/otrs.ModuleTools.pl Module::Package::Ins
 alias upack='perl /opt/module-tools/bin/otrs.ModuleTools.pl Module::Package::Uninstall'
 #alias pullall='perl /opt/scripts/OTRS-AllInOne/Pull_All.sh'
 #alias rc='perl /opt/scripts/OTRS-AllInOne/Rebuild_Config.sh'
+
+alias send='perl bin/otrs.Console.pl Maint::Email::MailQueue --send'
 
 #alias otrs='../scripts/install_OTRS.sh'
 #alias otrs4='../scripts/install_OTRS4.sh'
@@ -211,10 +211,9 @@ alias cl='git clean -dfx'
 
 alias fetch='perl bin/otrs.Console.pl Maint::PostMaster::Read < '
 
-alias cm='cd /opt/OTRSContinuousIntegrationMaster'
-alias b='cd /opt/OTRSBusiness'
 alias rename='perl scripts/rename_folders.sh'
 alias orc='bin/otrs.Console.pl Maint::Config::Rebuild --cleanup'
+alias confmig='perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory /opt/otrs/Kernel/Config/Files/'
 
 alias ..='cd ../'
 alias ...='cd ../..'
@@ -224,16 +223,52 @@ alias .....='cd ../../../..'
 alias r4='git checkout rel-4_0'
 alias r5='git checkout rel-5_0'
 alias r6='git checkout rel-6_0'
-alias m='git checkout master'
+alias r7='git checkout rel-7_0'
+alias r8='git checkout rel-8_0'
+alias r9='git checkout master'
 
-alias confmig='perl bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory /opt/otrs/Kernel/Config/Files/'
+alias o="cd /opt/otrs"
+alias o7="cd /opt/otrs7"
+alias o8="cd /opt/otrs8"
+alias o9="cd /opt/otrs9"
+
+
 alias mojo='bin/otrs.Console.pl Dev::Tools::WebServer'
+alias ws7='/opt/otrs7/bin/otrs.Console.pl Dev::Tools::WebServer --app External --port 3000'
+
+alias ws8a='/opt/otrs8/bin/otrs.Console.pl Dev::Tools::WebServer --app Agent --port 3010'
+alias ws8e='/opt/otrs8/bin/otrs.Console.pl Dev::Tools::WebServer --app External --port 3012'
+
+alias ws9a='/opt/otrs9/bin/otrs.Console.pl Dev::Tools::WebServer --app Agent --port 3020'
+alias ws9e='/opt/otrs9/bin/otrs.Console.pl Dev::Tools::WebServer --app External --port 3022'
+
+alias servers='/opt/scripts/startservers-zi.sh'
+
+alias el='/opt/elasticsearch/bin/elasticsearch'
+
 
 # merge bug fix branch
 alias bs='./../scripts/BugBranchMerge.sh'
 alias ac='git ac --bug'
 alias ms='git merge --squash --no-commit'
 alias ca='git commit --author'
+alias cp='git cherry-pick --no-commit '
+
+// delete branch locally
+alias db='git branch -D '
+
+// delete branch remotely
+alias dbo='git push origin --delete '
+
+function delete_branch(){
+echo ""
+echo -e "Deleting $1 branch:"
+git branch -D $1
+git push origin --delete $1
+}
+
+alias dall="delete_branch"
+
 
 
 PERL_MB_OPT="--install_base \"/home/s7otrs/perl5\""; export PERL_MB_OPT;
