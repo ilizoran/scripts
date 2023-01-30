@@ -128,7 +128,7 @@ echo -e "${yellow}Installing $OTRSName $DBType"
 echo -e "======================================================================="
 echo -e "${green}"
 
-sudo -u s7otrs /opt/module-tools/bin/otrs.ModuleTools.pl TestSystem::Instance::Setup --framework-directory $FrameworkRoot --database-type $DBType
+sudo -u s7design /opt/module-tools/bin/otrs.ModuleTools.pl TestSystem::Instance::Setup --framework-directory $FrameworkRoot --database-type $DBType
 
 echo -e "\\n${yellow}======================================================================="
 
@@ -144,7 +144,7 @@ fi
 
 # Update registration date.
 if [[ $DBType == "Mysql" ]]
-then 
+then
 	/opt/scripts/registrationOTRS.sh $OTRS
 fi
 
@@ -241,4 +241,3 @@ if [[ $Module != "No" ]]
 		done
 		echo -e "${green}Done.\\n"
 fi
-

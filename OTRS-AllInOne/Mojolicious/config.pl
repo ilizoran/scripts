@@ -47,9 +47,9 @@ my $Config = {
         # Password for your Oracle user.
         DatabasePasswordOracle => '',
 
-        PermissionsOTRSUser   => 's7otrs',                                  # OTRS user
+        PermissionsOTRSUser   => 's7design',                                  # OTRS user
         PermissionsOTRSGroup  => 'www-data',                                # OTRS group
-        PermissionsWebUser    => 's7otrs',                                  # otrs-web user
+        PermissionsWebUser    => 's7design',                                  # otrs-web user
         PermissionsWebGroup   => 'www-data',                                # otrs-web group
         PermissionsAdminGroup => ( $^O =~ /darwin/i ? 'wheel' : 'root' ),
 
@@ -68,12 +68,12 @@ my $Config = {
     #    DatabaseUser => 'otrs_test',
     #    DatabasePw   => 'otrs_test',
     #};
-    
+
     \$Self->{'SecureMode'} = 1;
     \$Self->{'SystemID'}            = '54';
     \$Self->{'SessionName'}         = '$SystemName';
     \$Self->{'ProductName'}         = '$SystemName';
-    
+
     if( \$Self->{ProductName} =~ /otrs7.*\$/ ){
          \$Self->{'TestHTTPHostname'}    = 'localhost:3001';
     }
@@ -83,7 +83,7 @@ my $Config = {
     elsif ( \$Self->{ProductName} =~ /otrs9.*\$/ ){
         \$Self->{'TestHTTPHostname'}    = 'localhost:3021';
     }
-    
+
     \$Self->{'ScriptAlias'}         = '$SystemName/';
     \$Self->{'Frontend::WebPath'}   = '/$SystemName-web/';
 
@@ -512,7 +512,7 @@ EOD
             '/opt/ITSMServiceLevelManagement',
             '/opt/ImportExport',
             '/opt/OTRSBusiness',
-        ],  
+        ],
         Full5 => [
             '/opt/FAQ',
             '/opt/GeneralCatalog',
@@ -531,8 +531,8 @@ EOD
             '/opt/OTRSTicketNumberCounterDatabase',
             '/opt/Survey',
             '/opt/SystemMonitoring',
-            '/opt/TimeAccounting', 
-        ],       
+            '/opt/TimeAccounting',
+        ],
         Full6 => [
             '/opt/FAQ',
             '/opt/GeneralCatalog',
@@ -548,7 +548,7 @@ EOD
             '/opt/OTRSMasterSlave',
             '/opt/Survey',
             '/opt/SystemMonitoring',
-            '/opt/TimeAccounting', 
+            '/opt/TimeAccounting',
         ],
         Full7 => [
             '/opt/GeneralCatalog',
@@ -589,7 +589,7 @@ EOD
             '/opt/SaaSSOAP',
             '/opt/Survey',
             '/opt/SystemMonitoring',
-            '/opt/TimeAccounting', 
+            '/opt/TimeAccounting',
         ],
         Portal7 => [
             '/opt/Campain',
@@ -616,10 +616,8 @@ EOD
             '/opt/SaaSSOAP',
             '/opt/Survey',
             '/opt/SystemMonitoring',
-            '/opt/TimeAccounting', 
+            '/opt/TimeAccounting',
             '/opt/OTRSPortal',
         ],
     },
 };
-
-
